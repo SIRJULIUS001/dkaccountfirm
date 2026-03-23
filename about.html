@@ -32,77 +32,90 @@
     </script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --sky-blue: #0ea5e9; 
-            --light-sky-blue: #f0f9ff;
-            --dark-charcoal: #1A202C;
+            --light-sky-blue: #f8fafc;
+            --dark-charcoal: #0f172a;
+            --container-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
+            background-color: #fcfcfd;
             color: var(--dark-charcoal);
             overflow-x: hidden;
             line-height: 1.6;
+            letter-spacing: -0.011em; /* Optimized for Inter */
         }
 
         /* Nav with White Outline Button */
         .navbar {
             background-color: var(--sky-blue) !important;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
         }
-        .navbar-brand, .nav-link {
+        .navbar-brand {
             color: #ffffff !important;
-            font-weight: 600;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .nav-link:hover { opacity: 1; }
+
         .btn-outline-white {
             border: 2px solid #ffffff;
             color: #ffffff !important;
             padding: 8px 25px;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: 700;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
         }
         .btn-outline-white:hover {
             background: #ffffff;
             color: var(--sky-blue) !important;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .about-hero {
-            padding: 120px 0 180px 0;
-            background: linear-gradient(rgba(240, 249, 255, 0.92), rgba(240, 249, 255, 0.92)), 
+            padding: 140px 0 200px 0;
+            background: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), 
                         url('https://images.unsplash.com/photo-1454165833767-131f369ed33d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             text-align: center;
         }
 
-        /* Floating Content Card */
+        /* High Visibility Floating Card */
         .floating-about-card {
-            margin-top: -120px;
+            margin-top: -140px;
             background: #ffffff;
-            border-top: 6px solid var(--sky-blue);
-            border-radius: 20px;
-            padding: 70px 50px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--sky-blue);
+            border-radius: 24px;
+            padding: 80px 60px;
+            box-shadow: var(--container-shadow);
             position: relative;
             z-index: 10;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .motto-banner {
             background-color: var(--light-sky-blue);
-            border-left: 5px solid var(--sky-blue);
-            padding: 25px;
-            margin: 35px 0;
+            border-left: 6px solid var(--sky-blue);
+            padding: 30px;
+            margin: 40px 0;
             font-style: italic;
-            font-size: 1.4rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--sky-blue);
+            border-radius: 0 12px 12px 0;
         }
 
         .value-icon {
@@ -112,37 +125,80 @@
         }
 
         /* Methodology & Tech Styles */
-        .step-number { font-size: 3rem; font-weight: 800; color: #e2e8f0; line-height: 1; }
-        .tech-label { letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; color: var(--sky-blue); }
-        .grayscale { filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
-        .grayscale:hover { filter: grayscale(0%); opacity: 1; }
+        .method-card {
+            background: #ffffff;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+            transition: 0.3s;
+        }
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--container-shadow);
+        }
+
+        .step-number { 
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            color: #f1f5f9; 
+            line-height: 1; 
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tech-label { 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            font-weight: 700;
+            color: var(--sky-blue); 
+        }
+
+        .grayscale { 
+            filter: grayscale(100%); 
+            opacity: 0.5; 
+            transition: 0.4s; 
+        }
+        .grayscale:hover { 
+            filter: grayscale(0%); 
+            opacity: 1; 
+        }
 
         /* Footer */
         footer {
             background-color: var(--sky-blue);
             color: #ffffff !important;
-            padding: 70px 0 30px 0;
-            margin-top: 100px;
+            padding: 80px 0 40px 0;
+            margin-top: 120px;
         }
-        .footer-logo { font-weight: 800; font-size: 1.6rem; color: #ffffff; }
-        .sky-line { height: 2px; width: 45px; background: #ffffff; margin: 12px 0 22px 0; }
+        .footer-logo { font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.5px; }
+        .sky-line { height: 3px; width: 60px; background: #ffffff; margin: 15px 0 25px 0; }
         footer h5, footer p, footer small, footer ul li { color: #ffffff !important; }
         footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
-        .badge-outline { border: 1px solid #ffffff; background: transparent; padding: 5px 12px; }
+        .badge-outline { border: 2.5px solid #ffffff; background: transparent; padding: 6px 15px; font-weight: 700; border-radius: 6px; }
 
         /* WhatsApp */
         .whatsapp-float {
             position: fixed;
-            width: 60px; height: 60px;
+            width: 65px; height: 65px;
             bottom: 40px; right: 40px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
             z-index: 1000;
+            transition: 0.3s;
             text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+
+        @media (max-width: 768px) {
+            .floating-about-card { padding: 40px 25px; }
+            .display-3 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -150,7 +206,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">DK ACCOUNT FIRM</a>
+            <a class="navbar-brand" href="index.html">DK ACCOUNT FIRM</a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
@@ -167,16 +223,16 @@
 
     <header class="about-hero">
         <div class="container">
-            <h1 class="display-3 fw-bold">Our <span style="color: var(--sky-blue)">Mission</span></h1>
-            <p class="lead text-muted fs-4">Precision-driven financial leadership for the modern Kenyan era.</p>
+            <h1 class="display-3 fw-bolder" style="font-weight: 900; letter-spacing: -2px;">Our <span style="color: var(--sky-blue)">Mission</span></h1>
+            <p class="lead text-muted fs-4 fw-medium">Precision-driven financial leadership for the modern Kenyan era.</p>
         </div>
     </header>
 
     <main class="container">
         <div class="floating-about-card">
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
                 <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4">DK Account is more than just an <span style="color: var(--sky-blue)">Accounting Firm</span></h2>
+                    <h2 class="fw-bold mb-4" style="font-weight: 800; letter-spacing: -1px;">DK Account is more than just an <span style="color: var(--sky-blue)">Accounting Firm</span></h2>
                     <p class="fs-5">At DK Account Firm, we are your <strong>financial growth partner</strong>. We help businesses and individuals manage their finances with confidence.</p>
                     <p class="text-muted">We bridge the gap between financial precision and ICT innovation. Based in Meru, our firm utilizes CPA expertise and custom automation tools to protect your interests and drive sustainable growth.</p>
                     
@@ -184,115 +240,132 @@
                         "Unfailing Exactness in Every Detail."
                     </div>
 
-                    <p>Our goal is to <strong>save your time, reduce stress, and ensure total compliance</strong> across your entire business operation.</p>
+                    <p class="fw-medium">Our goal is to <strong>save your time, reduce stress, and ensure total compliance</strong> across your entire business operation.</p>
                 </div>
                 <div class="col-lg-5">
-                    <div class="p-4 rounded-4 shadow-sm border h-100 bg-light">
-                        <h4 class="fw-bold mb-4 border-bottom pb-2">Our Core Values</h4>
-                        <div class="mb-4">
-                            <i class="fas fa-bullseye value-icon"></i>
-                            <h5>Accuracy</h5>
-                            <p class="small text-muted">Clarity in every figure, ensuring your foundational data is perfect.</p>
+                    <div class="p-5 rounded-4 shadow-sm border h-100 bg-light" style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <h4 class="fw-bold mb-4 border-bottom pb-3">Our Core Values</h4>
+                        <div class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-bullseye value-icon me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Accuracy</h5>
+                                <p class="small text-muted">Clarity in every figure, ensuring your foundational data is perfect.</p>
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <i class="fas fa-eye value-icon"></i>
-                            <h5>Transparency</h5>
-                            <p class="small text-muted">A clear, honest reporting style that builds long-term international trust.</p>
+                        <div class="mb-4 d-flex align-items-start">
+                            <i class="fas fa-eye value-icon me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Transparency</h5>
+                                <p class="small text-muted">A clear, honest reporting style that builds long-term international trust.</p>
+                            </div>
                         </div>
-                        <div>
-                            <i class="fas fa-hand-holding-usd value-icon"></i>
-                            <h5>Delivering Value</h5>
-                            <p class="small text-muted">Providing strategic insights that help you scale nationwide.</p>
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-hand-holding-usd value-icon me-3"></i>
+                            <div>
+                                <h5 class="fw-bold mb-1">Delivering Value</h5>
+                                <p class="small text-muted">Providing strategic insights that help you scale nationwide.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row mt-5 pt-4">
+            <div class="row mt-5 pt-5 border-top">
                 <div class="col-12 text-center">
-                    <h4 class="fw-bold"><i class="fas fa-graduation-cap text-primary me-2"></i> Social Responsibility</h4>
-                    <p class="text-muted mx-auto" style="max-width: 700px;">
+                    <h4 class="fw-bold mb-3"><i class="fas fa-graduation-cap text-primary me-2"></i> Social Responsibility</h4>
+                    <p class="text-muted mx-auto" style="max-width: 750px; font-size: 1.1rem;">
                         Beyond numbers, we are educators. We provide financial literacy workshops and mentor ICT students to build a technically proficient and financially sound future for Kenya.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-5 pt-5 text-center">
-            <h2 class="fw-bold mb-5">Our <span style="color: var(--sky-blue)">Methodology</span></h2>
-            <div class="col-md-3 mb-4">
-                <div class="step-number">01</div>
-                <h6 class="fw-bold">Digital Sync</h6>
-                <p class="small text-muted">Using ICT to securely integrate your data into our cloud ecosystem.</p>
+        <div class="row mt-5 pt-5 text-center g-4">
+            <div class="col-12">
+                <h2 class="fw-bold mb-5" style="font-weight: 800;">Our <span style="color: var(--sky-blue)">Methodology</span></h2>
             </div>
-            <div class="col-md-3 mb-4">
-                <div class="step-number">02</div>
-                <h6 class="fw-bold">Strategic Audit</h6>
-                <p class="small text-muted">Applying 'Unfailing Exactness' to identify risks and opportunities.</p>
+            <div class="col-md-3">
+                <div class="method-card">
+                    <span class="step-number">01</span>
+                    <h6 class="fw-bold mb-2">Digital Sync</h6>
+                    <p class="small text-muted">Using ICT to securely integrate your data into our cloud ecosystem.</p>
+                </div>
             </div>
-            <div class="col-md-3 mb-4">
-                <div class="step-number">03</div>
-                <h6 class="fw-bold">Tax Optimization</h6>
-                <p class="small text-muted">Ensuring full KRA compliance while maximizing your benefits.</p>
+            <div class="col-md-3">
+                <div class="method-card">
+                    <span class="step-number">02</span>
+                    <h6 class="fw-bold mb-2">Strategic Audit</h6>
+                    <p class="small text-muted">Applying 'Unfailing Exactness' to identify risks and opportunities.</p>
+                </div>
             </div>
-            <div class="col-md-3 mb-4">
-                <div class="step-number">04</div>
-                <h6 class="fw-bold">Growth Partnership</h6>
-                <p class="small text-muted">Providing monthly briefings to keep you scaling with confidence.</p>
+            <div class="col-md-3">
+                <div class="method-card">
+                    <span class="step-number">03</span>
+                    <h6 class="fw-bold mb-2">Tax Optimization</h6>
+                    <p class="small text-muted">Ensuring full KRA compliance while maximizing your benefits.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="method-card">
+                    <span class="step-number">04</span>
+                    <h6 class="fw-bold mb-2">Growth Partnership</h6>
+                    <p class="small text-muted">Providing monthly briefings to keep you scaling with confidence.</p>
+                </div>
             </div>
         </div>
 
-        <div class="text-center mt-5 py-5 bg-light rounded-4">
+        <div class="text-center mt-5 py-5 bg-light rounded-4 shadow-sm border">
             <h4 class="fw-bold">Serving the Republic of Kenya</h4>
-            <p class="text-muted">Remote-first accounting with physical focus hubs in <strong>Meru, Nairobi, and Mombasa</strong>.</p>
+            <p class="text-muted fs-5">Remote-first accounting with physical focus hubs in <strong>Meru, Nairobi, and Mombasa</strong>.</p>
         </div>
 
-        <div class="text-center mt-5 py-4 border-top border-bottom">
-            <p class="tech-label fw-bold mb-4">Powered by International Financial Technology</p>
-            <div class="d-flex flex-wrap justify-content-center gap-5 fw-bold grayscale">
-                <span>QUICKBOOKS</span>
-                <span>XERO</span>
-                <span>SAGE</span>
-                <span>M-PESA DARAJA</span>
-                <span>KRA iTAX</span>
+        <div class="text-center mt-5 py-5 border-top border-bottom">
+            <p class="tech-label mb-5">Powered by International Financial Technology</p>
+            <div class="d-flex flex-wrap justify-content-center gap-5 fw-bold grayscale align-items-center">
+                <span style="font-size: 1.1rem;">QUICKBOOKS</span>
+                <span style="font-size: 1.1rem;">XERO</span>
+                <span style="font-size: 1.1rem;">SAGE</span>
+                <span style="font-size: 1.1rem;">M-PESA DARAJA</span>
+                <span style="font-size: 1.1rem;">KRA iTAX</span>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
+            <div class="row g-4">
+                <div class="col-lg-4">
                     <div class="footer-logo">DK ACCOUNT FIRM</div>
                     <div class="sky-line"></div>
-                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
+                    <p class="opacity-75">Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li>Bookkeeping</li>
-                        <li>Payroll</li>
-                        <li>Tax Filing</li>
-                        <li>Audit</li>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2">Bookkeeping</li>
+                        <li class="mb-2">Payroll</li>
+                        <li class="mb-2">Tax Filing</li>
+                        <li class="mb-2">Audit</li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5 class="fw-bold">Certifications</h5>
-                    <div class="d-flex gap-2 mt-3">
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Certifications</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
                         <span class="badge badge-outline">ICPAK</span>
                         <span class="badge badge-outline">ACCA</span>
                         <span class="badge badge-outline">KRA</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5 class="fw-bold">Contact</h5>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact</h5>
                     <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
                     <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Meru, Kenya</p>
                 </div>
             </div>
-            <hr>
-            <div class="text-center py-3">
-                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+            <hr class="my-5">
+            <div class="text-center">
+                <small class="opacity-50">&copy; 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
