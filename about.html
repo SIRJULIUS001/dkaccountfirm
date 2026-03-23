@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | DK ACCOUNT FIRM</title>
+    
+    <title>About Us | DK Account Firm - Professional Accounting & ICT Solutions Kenya</title>
+    <meta name="title" content="About Us | DK Account Firm - Professional Accounting & ICT Solutions Kenya">
+    <meta name="description" content="DK Account Firm provides professional bookkeeping, tax filing (KRA), and payroll services with unfailing exactness. Based in Meru, serving Nairobi and all of Kenya with ICT-integrated accounting.">
+    <meta name="keywords" content="Accounting firms in Kenya, Best accountants in Meru, KRA tax filing services Nairobi, Bookkeeping services Kenya, ICT integrated accounting, DK Account Firm, CPA Kenya, Payroll management Kenya, Audit services Meru">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dkaccountfirm.co.ke/about.html">
+    <meta property="og:title" content="DK Account Firm | Unfailing Exactness in Every Detail">
+    <meta property="og:description" content="Professional bookkeeping and tax services with ICT-driven accuracy. Serving Meru, Nairobi, and beyond.">
+    <meta property="og:image" content="https://www.dkaccountfirm.co.ke/assets/img/og-preview.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "DK Account Firm",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Meru",
+        "addressCountry": "KE"
+      },
+      "url": "https://www.dkaccountfirm.co.ke",
+      "telephone": "+254110311712",
+      "motto": "Unfailing Exactness in Every Detail"
+    }
+    </script>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,6 +47,7 @@
             background-color: #ffffff;
             color: var(--dark-charcoal);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         /* Nav with White Outline Button */
@@ -87,8 +114,10 @@
         /* Methodology & Tech Styles */
         .step-number { font-size: 3rem; font-weight: 800; color: #e2e8f0; line-height: 1; }
         .tech-label { letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; color: var(--sky-blue); }
+        .grayscale { filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
+        .grayscale:hover { filter: grayscale(0%); opacity: 1; }
 
-        /* Footer - Your Exact Structure */
+        /* Footer */
         footer {
             background-color: var(--sky-blue);
             color: #ffffff !important;
@@ -113,6 +142,7 @@
             font-size: 30px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -121,6 +151,9 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">DK ACCOUNT FIRM</a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -134,8 +167,8 @@
 
     <header class="about-hero">
         <div class="container">
-            <h1 class="display-3 fw-bold">Our <span style="color: var(--sky-blue)">Story</span></h1>
-            <p class="lead text-muted fs-4">Precision-driven financial leadership for the modern era.</p>
+            <h1 class="display-3 fw-bold">Our <span style="color: var(--sky-blue)">Mission</span></h1>
+            <p class="lead text-muted fs-4">Precision-driven financial leadership for the modern Kenyan era.</p>
         </div>
     </header>
 
@@ -145,13 +178,13 @@
                 <div class="col-lg-7">
                     <h2 class="fw-bold mb-4">DK Account is more than just an <span style="color: var(--sky-blue)">Accounting Firm</span></h2>
                     <p class="fs-5">At DK Account Firm, we are your <strong>financial growth partner</strong>. We help businesses and individuals manage their finances with confidence.</p>
-                    <p class="text-muted">We are here to make the complex and time-consuming accounting practices simple for you. Based in Kenya, our firm combines CPA expertise with modern efficiency to ensure your peace of mind.</p>
+                    <p class="text-muted">We bridge the gap between financial precision and ICT innovation. Based in Meru, our firm utilizes CPA expertise and custom automation tools to protect your interests and drive sustainable growth.</p>
                     
                     <div class="motto-banner">
                         "Unfailing Exactness in Every Detail."
                     </div>
 
-                    <p>Our goal is simple: <strong>To save your time, reduce your stress, and ensure total compliance.</strong></p>
+                    <p>Our goal is to <strong>save your time, reduce stress, and ensure total compliance</strong> across your entire business operation.</p>
                 </div>
                 <div class="col-lg-5">
                     <div class="p-4 rounded-4 shadow-sm border h-100 bg-light">
@@ -159,19 +192,28 @@
                         <div class="mb-4">
                             <i class="fas fa-bullseye value-icon"></i>
                             <h5>Accuracy</h5>
-                            <p class="small text-muted">Clarity in every figure, ensuring your data is foundationally perfect.</p>
+                            <p class="small text-muted">Clarity in every figure, ensuring your foundational data is perfect.</p>
                         </div>
                         <div class="mb-4">
                             <i class="fas fa-eye value-icon"></i>
                             <h5>Transparency</h5>
-                            <p class="small text-muted">A clear, honest reporting style that builds long-term trust.</p>
+                            <p class="small text-muted">A clear, honest reporting style that builds long-term international trust.</p>
                         </div>
                         <div>
                             <i class="fas fa-hand-holding-usd value-icon"></i>
                             <h5>Delivering Value</h5>
-                            <p class="small text-muted">Going beyond basic reporting to provide strategic growth insights.</p>
+                            <p class="small text-muted">Providing strategic insights that help you scale nationwide.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4">
+                <div class="col-12 text-center">
+                    <h4 class="fw-bold"><i class="fas fa-graduation-cap text-primary me-2"></i> Social Responsibility</h4>
+                    <p class="text-muted mx-auto" style="max-width: 700px;">
+                        Beyond numbers, we are educators. We provide financial literacy workshops and mentor ICT students to build a technically proficient and financially sound future for Kenya.
+                    </p>
                 </div>
             </div>
         </div>
@@ -181,30 +223,36 @@
             <div class="col-md-3 mb-4">
                 <div class="step-number">01</div>
                 <h6 class="fw-bold">Digital Sync</h6>
-                <p class="small text-muted">Securely integrating your data into our cloud ecosystem.</p>
+                <p class="small text-muted">Using ICT to securely integrate your data into our cloud ecosystem.</p>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="step-number">02</div>
-                <h6 class="fw-bold">Meticulous Audit</h6>
-                <p class="small text-muted">Applying 'Unfailing Exactness' to every line item.</p>
+                <h6 class="fw-bold">Strategic Audit</h6>
+                <p class="small text-muted">Applying 'Unfailing Exactness' to identify risks and opportunities.</p>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="step-number">03</div>
-                <h6 class="fw-bold">Tax Strategy</h6>
-                <p class="small text-muted">Optimizing compliance and reducing financial waste.</p>
+                <h6 class="fw-bold">Tax Optimization</h6>
+                <p class="small text-muted">Ensuring full KRA compliance while maximizing your benefits.</p>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="step-number">04</div>
-                <h6 class="fw-bold">Insight Delivery</h6>
-                <p class="small text-muted">Monthly strategic briefings to help you scale.</p>
+                <h6 class="fw-bold">Growth Partnership</h6>
+                <p class="small text-muted">Providing monthly briefings to keep you scaling with confidence.</p>
             </div>
         </div>
 
+        <div class="text-center mt-5 py-5 bg-light rounded-4">
+            <h4 class="fw-bold">Serving the Republic of Kenya</h4>
+            <p class="text-muted">Remote-first accounting with physical focus hubs in <strong>Meru, Nairobi, and Mombasa</strong>.</p>
+        </div>
+
         <div class="text-center mt-5 py-4 border-top border-bottom">
-            <p class="tech-label fw-bold mb-4">Integrated Technology Partners</p>
-            <div class="d-flex flex-wrap justify-content-center gap-5 opacity-50 fw-bold grayscale">
+            <p class="tech-label fw-bold mb-4">Powered by International Financial Technology</p>
+            <div class="d-flex flex-wrap justify-content-center gap-5 fw-bold grayscale">
                 <span>QUICKBOOKS</span>
                 <span>XERO</span>
+                <span>SAGE</span>
                 <span>M-PESA DARAJA</span>
                 <span>KRA iTAX</span>
             </div>
