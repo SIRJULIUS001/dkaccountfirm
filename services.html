@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | DK ACCOUNT FIRM - National Precision & Strategy</title>
+    <title>Professional Services | DK ACCOUNT FIRM - Meru, Kenya</title>
     
-    <meta name="description" content="Professional CPA & Business Advisory services in Kenya. Specialized in Tax Strategy, Audit, and ICT-driven financial solutions including QuickBooks setup and KRA compliance.">
-    
+    <meta name="description" content="Expert CPA, Audit, and Tax services in Meru, Kenya. We offer KRA iTax filing, QuickBooks setup, Payroll management, and Business Registration. Precision and strategy for your business growth.">
+    <meta name="keywords" content="CPA Meru, Tax Consultant Kenya, KRA iTax Returns, Audit firms in Meru, Business Registration Kenya, Payroll Services, QuickBooks Setup Kenya, DK Account Firm, Financial Advisory Meru">
+    <meta name="author" content="DK Account Firm">
+    <link rel="canonical" href="https://yourdomain.com/services.html">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
@@ -23,6 +26,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: var(--dark-charcoal);
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -99,12 +103,36 @@
         .check-list li { margin-bottom: 10px; display: flex; align-items: start; font-size: 0.92rem; color: #4A5568; }
         .check-list li i { color: var(--sky-blue); margin-right: 12px; margin-top: 4px; font-size: 0.8rem; }
 
-        /* Footer */
+        /* Footer Styling */
         footer {
             background-color: var(--sky-blue);
-            color: #ffffff !important;
-            padding: 60px 0 20px 0;
+            color: #ffffff;
+            padding: 80px 0 20px 0;
             margin-top: 80px;
+        }
+
+        .footer-logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .sky-line {
+            width: 40px;
+            height: 3px;
+            background: #fff;
+            margin: 10px 0 20px 0;
+            opacity: 0.7;
+        }
+
+        footer h5 { font-size: 1.1rem; margin-bottom: 20px; }
+        footer p { opacity: 0.85; font-size: 0.95rem; }
+        footer ul li { opacity: 0.85; margin-bottom: 10px; font-size: 0.95rem; }
+        
+        .badge.border-white {
+            font-weight: 600;
+            padding: 8px 12px;
+            border-width: 1.5px !important;
         }
 
         .whatsapp-float {
@@ -133,7 +161,7 @@
         </div>
     </nav>
 
-    <header class="services-header">
+    <header class="services-header" data-aos="fade-down">
         <div class="container">
             <h1 class="display-3 fw-bold mb-3">Our Expertise</h1>
             <p class="lead opacity-90">Comprehensive Financial & ICT Solutions for Kenya's Dynamic Enterprises.</p>
@@ -143,7 +171,7 @@
     <main class="container floating-container">
         <div class="row g-4">
             
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-desktop"></i></div>
                     <h4 class="fw-bold">Digital Services</h4>
@@ -156,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-file-invoice-dollar"></i></div>
                     <h4 class="fw-bold">Core Accounting</h4>
@@ -169,7 +197,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-users"></i></div>
                     <h4 class="fw-bold">Payroll Services</h4>
@@ -182,7 +210,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-stamp"></i></div>
                     <h4 class="fw-bold">Tax & Compliance</h4>
@@ -195,7 +223,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-briefcase"></i></div>
                     <h4 class="fw-bold">Business Strategy</h4>
@@ -208,7 +236,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-card">
                     <div class="service-icon-box"><i class="fas fa-chart-line"></i></div>
                     <h4 class="fw-bold">Audit & Assurance</h4>
@@ -224,12 +252,41 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <div class="fw-bold fs-4">DK ACCOUNT FIRM</div>
-            <p class="mt-2">Unfailing Exactness in Every Detail. Serving Meru and Beyond.</p>
-            <hr class="my-4 opacity-25">
-            <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">DK ACCOUNT FIRM</div>
+                    <div class="sky-line"></div>
+                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>Bookkeeping</li>
+                        <li>Payroll</li>
+                        <li>Tax Filing</li>
+                        <li>Audit</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Certifications</h5>
+                    <div class="d-flex gap-2 mt-3">
+                        <span class="badge border border-white">ICPAK</span>
+                        <span class="badge border border-white">ACCA</span>
+                        <span class="badge border border-white">KRA</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Contact</h5>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
+                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                </div>
+            </div>
+            <hr class="opacity-25 border-white">
+            <div class="text-center py-3">
+                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+            </div>
         </div>
     </footer>
 
@@ -238,5 +295,14 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>
