@@ -59,11 +59,13 @@
 
         .form-control:focus { border-color: var(--sky-blue); box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25); }
 
-        .btn-send {
+        .btn-send, .btn-get-started {
             background-color: var(--sky-blue); color: white; font-weight: 700;
             padding: 12px 30px; border: none; transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .btn-send:hover { background-color: #0284c7; transform: translateY(-2px); }
+        .btn-send:hover, .btn-get-started:hover { background-color: #0284c7; transform: translateY(-2px); color: white; }
 
         .map-container { min-height: 450px; height: 100%; width: 100%; border-radius: 15px; }
 
@@ -95,6 +97,7 @@
         .footer-logo { font-weight: 800; font-size: 1.5rem; }
         .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
         footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
+        .badge.border-white { border: 1px solid #ffffff !important; }
     </style>
 </head>
 <body>
@@ -120,7 +123,7 @@
     <header class="contact-header">
         <div class="container">
             <h1 class="display-4 fw-bold">Get In Touch</h1>
-            <p class="lead">Let's discuss how we can secure your financial future.</p>
+            <p class="lead">Ready to grow? Let's discuss your financial journey today.</p>
         </div>
     </header>
 
@@ -131,33 +134,34 @@
                 <form action="https://formspree.io/f/dkirimi152@gmail.com" method="POST">
                     <input type="hidden" name="_next" value="success.html">
                     <div class="mb-3">
-                        <label class="form-label fw-600">Full Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Jane Doe" required>
+                        <label class="form-label fw-bold">Full Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-600">Email Address</label>
-                        <input type="email" name="email" class="form-control" placeholder="name@company.com" required>
+                        <label class="form-label fw-bold">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="example@business.com" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-600">Service Required</label>
+                        <label class="form-label fw-bold">Service Required</label>
                         <select name="service" class="form-select">
-                            <option>Tax Strategy</option>
-                            <option>Audit & Assurance</option>
-                            <option>Business Advisory</option>
-                            <option>Other</option>
+                            <option value="Tax Strategy">Tax Strategy & Compliance</option>
+                            <option value="Audit">Audit & Assurance</option>
+                            <option value="Bookkeeping">Bookkeeping & Payroll</option>
+                            <option value="Advisory">Business Advisory</option>
+                            <option value="Other">Other Services</option>
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label class="form-label fw-600">Your Message</label>
-                        <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your needs..." required></textarea>
+                        <label class="form-label fw-bold">Your Message</label>
+                        <textarea name="message" class="form-control" rows="5" placeholder="How can we help your business thrive?" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-send w-100 rounded-3">Send Message</button>
+                    <button type="submit" class="btn btn-get-started w-100 rounded-3">Get Started Now</button>
                 </form>
             </div>
 
             <div class="col-lg-6 p-0">
                 <iframe class="map-container border-0" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31917.44840428574!2d37.6375059!3d0.0514801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178820f1882d9691%3A0x67399479383633e8!2sMeru!5e0!3m2!1sen!2ske!4v1711200000000!5m2!1sen!2ske" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.030560706598!2d37.6416625!3d0.0514801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178821998f460f73%3A0x8686f05e49265f24!2sMeru!5e0!3m2!1sen!2ske!4v1700000000000" 
                     allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -169,29 +173,31 @@
                 <div class="col-lg-4 mb-4">
                     <div class="footer-logo">DK ACCOUNT FIRM</div>
                     <div class="sky-line"></div>
-                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
+                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya with integrity.</p>
+                    <a href="contact.html" class="btn btn-outline-light mt-2 px-4 py-2">GET STARTED</a>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="fw-bold">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li>Bookkeeping</li>
-                        <li>Payroll</li>
-                        <li>Tax Filing</li>
-                        <li>Audit</li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Bookkeeping</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Payroll</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Tax Filing</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none">Audit</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h5 class="fw-bold">Certifications</h5>
-                    <div class="d-flex gap-2 mt-3">
-                        <span class="badge border border-white">ICPAK</span>
-                        <span class="badge border border-white">ACCA</span>
-                        <span class="badge border border-white">KRA</span>
+                    <div class="d-flex gap-2 mt-3 flex-wrap">
+                        <span class="badge border border-white p-2">ICPAK</span>
+                        <span class="badge border border-white p-2">ACCA</span>
+                        <span class="badge border border-white p-2">KRA</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h5 class="fw-bold">Contact</h5>
                     <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
                     <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Meru Town, Kenya</p>
                 </div>
             </div>
             <hr>
