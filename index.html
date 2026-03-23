@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* Updated Colors */
-            --sky-blue: #0ea5e9; /* Professional Sky Blue */
+            --sky-blue: #0ea5e9; 
             --light-sky-blue: #f0f9ff;
             --dark-charcoal: #1A202C;
         }
@@ -21,33 +20,43 @@
             color: var(--dark-charcoal);
         }
 
-        /* Navigation */
+        /* Updated Navigation - Sky Blue Background */
         .navbar {
-            background-color: var(--light-sky-blue);
+            background-color: var(--sky-blue) !important;
             padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            border-bottom: none;
         }
 
-        .nav-link {
-            color: var(--dark-charcoal) !important;
+        /* Updated Nav Content - White */
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
             font-weight: 600;
             margin: 0 15px;
         }
 
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        /* Contact Button - White Outline */
         .btn-sky {
-            background-color: var(--sky-blue);
-            border: none;
+            background-color: transparent;
+            border: 2px solid #ffffff;
             color: #ffffff !important;
             font-weight: 700;
-            padding: 10px 25px;
+            padding: 8px 25px;
             border-radius: 5px;
             transition: all 0.3s;
         }
 
         .btn-sky:hover {
-            background-color: #0284c7;
+            background-color: #ffffff;
+            color: var(--sky-blue) !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
         }
 
         /* Hero Section */
@@ -140,7 +149,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">DK <span style="color: var(--sky-blue)">ACCOUNT FIRM</span></a>
+            <a class="navbar-brand fw-bold" href="#">DK <span style="color: #ffffff">ACCOUNT FIRM</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
