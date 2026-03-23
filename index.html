@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DK ACCOUNT FIRM | Precision & Strategy</title>
+    
+    <meta name="description" content="DK Account Firm: Professional CPA services in Meru. Specializing in Tax Strategy, Audit, and Business Advisory for growing Kenyan enterprises.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="DK Account Firm | Precision & Strategy">
+    <meta property="og:description" content="Expert financial solutions in Meru. Reliability you can bank on.">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "DK Account Firm",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Meru",
+        "addressCountry": "KE"
+      },
+      "url": "https://www.dkaccount.com",
+      "telephone": "+2547XXXXXXXX",
+      "priceRange": "$$"
+    }
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
             --sky-blue: #0ea5e9; 
@@ -59,13 +83,25 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero Section - Updated for Two Columns */
         .hero {
-            padding: 100px 0 150px 0;
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+            padding: 80px 0 150px 0;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
                         url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
+        }
+
+        .owner-img {
+            max-height: 500px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Floating Widgets */
@@ -124,24 +160,59 @@
             margin-right: 20px;
         }
 
-        /* Footer */
+        /* Footer - Updated to Sky Blue */
         footer {
-            background-color: #f8f9fa;
-            border-top: 1px solid #eee;
+            background-color: var(--sky-blue);
+            color: #ffffff !important;
             padding: 60px 0 20px 0;
         }
 
         .footer-logo {
             font-weight: 800;
             font-size: 1.5rem;
-            color: var(--dark-charcoal);
+            color: #ffffff;
         }
 
         .sky-line {
             height: 2px;
             width: 50px;
-            background: var(--sky-blue);
+            background: #ffffff;
             margin: 10px 0 20px 0;
+        }
+
+        footer h5, footer .text-muted, footer p, footer small {
+            color: #ffffff !important;
+        }
+
+        footer hr {
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -165,10 +236,18 @@
         </div>
     </nav>
 
-    <header class="hero text-center">
+    <header class="hero">
         <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Precision & Strategy.<br><span style="color: var(--sky-blue)">Reliability You Can Bank On.</span></h1>
-            <p class="lead mb-5 text-muted">Certified Public Accountants providing tailored financial solutions for Meru's growing enterprises.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-start">
+                    <h1 class="display-3 fw-bold mb-4">Precision & Strategy.<br><span style="color: var(--sky-blue)">Reliability You Can Bank On.</span></h1>
+                    <p class="lead mb-5 text-muted">Certified Public Accountants providing tailored financial solutions for Meru's growing enterprises.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg px-5" style="background-color: var(--sky-blue); border: none; font-weight: 700;">Free Consultation</a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <img src="https://via.placeholder.com/500x600?text=Owner+Image" alt="Firm Principal" class="img-fluid owner-img">
+                </div>
+            </div>
         </div>
     </header>
 
@@ -193,6 +272,29 @@
                     <i class="fas fa-briefcase"></i>
                     <h3>Business Advisory</h3>
                     <p class="text-muted">Growth-focused consulting, cash flow forecasting, and strategic financial planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white text-center">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <h2 class="fw-bold" style="color: var(--sky-blue)">10+</h2>
+                    <p class="text-muted mb-0">Years Experience</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="fw-bold" style="color: var(--sky-blue)">500+</h2>
+                    <p class="text-muted mb-0">Clients Served</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="fw-bold" style="color: var(--sky-blue)">100%</h2>
+                    <p class="text-muted mb-0">KRA Compliance</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h2 class="fw-bold" style="color: var(--sky-blue)">Meru</h2>
+                    <p class="text-muted mb-0">Local Experts</p>
                 </div>
             </div>
         </div>
@@ -243,11 +345,11 @@
                 <div class="col-lg-4 mb-4">
                     <div class="footer-logo">DK ACCOUNT FIRM</div>
                     <div class="sky-line"></div>
-                    <p class="text-muted">Your trusted partner in navigating the complexities of modern finance. Based in Meru, serving clients nationwide.</p>
+                    <p>Your trusted partner in navigating the complexities of modern finance. Based in Meru, serving clients nationwide.</p>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled text-muted">
+                    <ul class="list-unstyled">
                         <li>Bookkeeping</li>
                         <li>Payroll</li>
                         <li>Tax Filing</li>
@@ -256,24 +358,28 @@
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h5 class="fw-bold">Certifications</h5>
-                    <div class="d-flex gap-3 mt-3 grayscale-filter" style="opacity: 0.6">
-                        <span class="badge bg-secondary">ICPAK</span>
-                        <span class="badge bg-secondary">ACCA</span>
-                        <span class="badge bg-secondary">KRA</span>
+                    <div class="d-flex gap-3 mt-3">
+                        <span class="badge" style="background: rgba(255,255,255,0.2)">ICPAK</span>
+                        <span class="badge" style="background: rgba(255,255,255,0.2)">ACCA</span>
+                        <span class="badge" style="background: rgba(255,255,255,0.2)">KRA</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h5 class="fw-bold">Contact</h5>
-                    <p class="text-muted mb-1"><i class="fas fa-phone me-2"></i> +254 7XX XXX XXX</p>
-                    <p class="text-muted"><i class="fas fa-envelope me-2"></i> info@dkaccount.com</p>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 7XX XXX XXX</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@dkaccount.com</p>
                 </div>
             </div>
             <hr>
-            <div class="text-center text-muted py-3">
+            <div class="text-center py-3">
                 <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/2547XXXXXXXX?text=Hello%20DK%20Account%20Firm,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
