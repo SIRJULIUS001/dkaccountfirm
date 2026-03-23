@@ -20,36 +20,49 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: var(--dark-charcoal);
+            overflow-x: hidden;
         }
 
-        /* Consistent Navigation */
+        /* Nav with White Outline Button */
         .navbar {
             background-color: var(--sky-blue) !important;
             padding: 1rem 2rem;
         }
-
         .navbar-brand, .nav-link {
             color: #ffffff !important;
             font-weight: 600;
         }
+        .btn-outline-white {
+            border: 2px solid #ffffff;
+            color: #ffffff !important;
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-outline-white:hover {
+            background: #ffffff;
+            color: var(--sky-blue) !important;
+        }
 
-        /* Hero Section - Matching Home Page Style */
+        /* Hero Section */
         .about-hero {
-            padding: 100px 0 160px 0;
-            background: linear-gradient(rgba(240, 249, 255, 0.9), rgba(240, 249, 255, 0.9)), 
+            padding: 120px 0 180px 0;
+            background: linear-gradient(rgba(240, 249, 255, 0.92), rgba(240, 249, 255, 0.92)), 
                         url('https://images.unsplash.com/photo-1454165833767-131f369ed33d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             text-align: center;
         }
 
-        /* Floating Content Container - Matching Home Page Widgets */
+        /* Floating Content Card */
         .floating-about-card {
-            margin-top: -100px;
+            margin-top: -120px;
             background: #ffffff;
-            border-top: 5px solid var(--sky-blue);
-            border-radius: 15px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 6px solid var(--sky-blue);
+            border-radius: 20px;
+            padding: 70px 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
             position: relative;
             z-index: 10;
         }
@@ -57,31 +70,38 @@
         .motto-banner {
             background-color: var(--light-sky-blue);
             border-left: 5px solid var(--sky-blue);
-            padding: 20px;
-            margin: 30px 0;
+            padding: 25px;
+            margin: 35px 0;
             font-style: italic;
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--sky-blue);
         }
 
-        /* Core Values Icons */
         .value-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--sky-blue);
             margin-bottom: 15px;
         }
 
-        /* Footer - Same as Home Page */
+        /* Methodology & Tech Styles */
+        .step-number { font-size: 3rem; font-weight: 800; color: #e2e8f0; line-height: 1; }
+        .tech-label { letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; color: var(--sky-blue); }
+
+        /* Footer - Your Exact Structure */
         footer {
             background-color: var(--sky-blue);
             color: #ffffff !important;
-            padding: 60px 0 20px 0;
-            margin-top: 80px;
+            padding: 70px 0 30px 0;
+            margin-top: 100px;
         }
-        footer h5, footer p, footer small { color: #ffffff !important; }
+        .footer-logo { font-weight: 800; font-size: 1.6rem; color: #ffffff; }
+        .sky-line { height: 2px; width: 45px; background: #ffffff; margin: 12px 0 22px 0; }
+        footer h5, footer p, footer small, footer ul li { color: #ffffff !important; }
+        footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
+        .badge-outline { border: 1px solid #ffffff; background: transparent; padding: 5px 12px; }
 
-        /* WhatsApp Floating Button */
+        /* WhatsApp */
         .whatsapp-float {
             position: fixed;
             width: 60px; height: 60px;
@@ -93,10 +113,7 @@
             font-size: 30px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
-            text-decoration: none;
-            transition: 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
     </style>
 </head>
 <body>
@@ -105,11 +122,11 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">DK ACCOUNT FIRM</a>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item ms-lg-4"><a class="btn-outline-white" href="#">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -118,21 +135,17 @@
     <header class="about-hero">
         <div class="container">
             <h1 class="display-3 fw-bold">Our <span style="color: var(--sky-blue)">Story</span></h1>
-            <p class="lead text-muted">A Commitment to Excellence in Kenyan Finance</p>
+            <p class="lead text-muted fs-4">Precision-driven financial leadership for the modern era.</p>
         </div>
     </header>
 
-    <section class="container">
+    <main class="container">
         <div class="floating-about-card">
             <div class="row g-5">
                 <div class="col-lg-7">
-                    <h2 class="fw-bold mb-4">More than just an <span style="color: var(--sky-blue)">Accounting Firm</span></h2>
-                    <p class="fs-5">
-                        At DK Account Firm, we are your <strong>financial growth partner</strong>. We help businesses and individuals manage their finances with confidence. 
-                    </p>
-                    <p class="text-muted">
-                        We are here to make the complex and time-consuming accounting practices simple for you. Based in Kenya, our firm combines CPA expertise with modern efficiency to ensure your peace of mind.
-                    </p>
+                    <h2 class="fw-bold mb-4">DK Account is more than just an <span style="color: var(--sky-blue)">Accounting Firm</span></h2>
+                    <p class="fs-5">At DK Account Firm, we are your <strong>financial growth partner</strong>. We help businesses and individuals manage their finances with confidence.</p>
+                    <p class="text-muted">We are here to make the complex and time-consuming accounting practices simple for you. Based in Kenya, our firm combines CPA expertise with modern efficiency to ensure your peace of mind.</p>
                     
                     <div class="motto-banner">
                         "Unfailing Exactness in Every Detail."
@@ -142,36 +155,97 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="p-4 rounded-4 shadow-sm border h-100 bg-light">
-                        <h4 class="fw-bold mb-4">Our Core Values</h4>
+                        <h4 class="fw-bold mb-4 border-bottom pb-2">Our Core Values</h4>
                         <div class="mb-4">
                             <i class="fas fa-bullseye value-icon"></i>
                             <h5>Accuracy</h5>
-                            <p class="small text-muted">Clarity in every figure, leaving no room for error.</p>
+                            <p class="small text-muted">Clarity in every figure, ensuring your data is foundationally perfect.</p>
                         </div>
                         <div class="mb-4">
                             <i class="fas fa-eye value-icon"></i>
                             <h5>Transparency</h5>
-                            <p class="small text-muted">Open communication and honest reporting at every step.</p>
+                            <p class="small text-muted">A clear, honest reporting style that builds long-term trust.</p>
                         </div>
                         <div>
                             <i class="fas fa-hand-holding-usd value-icon"></i>
                             <h5>Delivering Value</h5>
-                            <p class="small text-muted">Going beyond numbers to provide growth-oriented insights.</p>
+                            <p class="small text-muted">Going beyond basic reporting to provide strategic growth insights.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="row mt-5 pt-5 text-center">
+            <h2 class="fw-bold mb-5">Our <span style="color: var(--sky-blue)">Methodology</span></h2>
+            <div class="col-md-3 mb-4">
+                <div class="step-number">01</div>
+                <h6 class="fw-bold">Digital Sync</h6>
+                <p class="small text-muted">Securely integrating your data into our cloud ecosystem.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-number">02</div>
+                <h6 class="fw-bold">Meticulous Audit</h6>
+                <p class="small text-muted">Applying 'Unfailing Exactness' to every line item.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-number">03</div>
+                <h6 class="fw-bold">Tax Strategy</h6>
+                <p class="small text-muted">Optimizing compliance and reducing financial waste.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="step-number">04</div>
+                <h6 class="fw-bold">Insight Delivery</h6>
+                <p class="small text-muted">Monthly strategic briefings to help you scale.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 py-4 border-top border-bottom">
+            <p class="tech-label fw-bold mb-4">Integrated Technology Partners</p>
+            <div class="d-flex flex-wrap justify-content-center gap-5 opacity-50 fw-bold grayscale">
+                <span>QUICKBOOKS</span>
+                <span>XERO</span>
+                <span>M-PESA DARAJA</span>
+                <span>KRA iTAX</span>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <div class="container text-center">
-            <div class="footer-logo fw-bold mb-3">DK ACCOUNT FIRM</div>
-            <p>Serving Kenyan Enterprises with Unfailing Exactness.</p>
-            <p class="mb-1"><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
-            <p><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
-            <hr class="bg-white my-4">
-            <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">DK ACCOUNT FIRM</div>
+                    <div class="sky-line"></div>
+                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>Bookkeeping</li>
+                        <li>Payroll</li>
+                        <li>Tax Filing</li>
+                        <li>Audit</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Certifications</h5>
+                    <div class="d-flex gap-2 mt-3">
+                        <span class="badge badge-outline">ICPAK</span>
+                        <span class="badge badge-outline">ACCA</span>
+                        <span class="badge badge-outline">KRA</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Contact</h5>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
+                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center py-3">
+                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+            </div>
         </div>
     </footer>
 
