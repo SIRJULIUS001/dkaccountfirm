@@ -6,7 +6,7 @@
     
     <title>Financial Insights & Tax Strategy | DK Account Firm Kenya</title>
     <meta name="description" content="Expert financial analysis, KRA tax updates, and business strategy for Kenyan enterprises. Led by CPA Daniel, DK Account Firm provides precision in accounting and ICT solutions.">
-    <meta name="keywords" content="CPA Kenya, Tax Consultant Meru, KRA Compliance, IFRS Reporting, Financial Advisory Kenya, M-Pesa API Integration, Business Audit Meru">
+    <meta name="keywords" content="CPA Kenya, Tax Consultant Meru, KRA Compliance, IFRS Reporting, Financial Advisory Kenya, M-Pesa API Integration, Business Audit Meru, ICT Education Kenya">
     <meta name="author" content="DK Account Firm">
 
     <meta property="og:title" content="Financial Insights & Strategy | DK Account Firm">
@@ -78,6 +78,11 @@
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(14, 165, 233, 0.1); }
         .article-img { height: 240px; background-color: #ddd; background-size: cover; background-position: center; }
         
+        /* News Sidebar Styling */
+        .news-link { transition: color 0.2s ease-in-out; font-size: 0.9rem; line-height: 1.4; display: block; }
+        .news-link:hover { color: var(--sky-blue) !important; }
+        .news-item:last-child { border-bottom: none !important; }
+
         /* Resource Section */
         .resource-card {
             background: #fff;
@@ -121,7 +126,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <h1 class="display-4 fw-bold">Financial <span style="color: var(--sky-blue)">Intelligence</span></h1>
-                    <p class="lead text-muted">Stay compliant and profitable with professional insights tailored for the Kenyan market and beyond.</p>
+                    <p class="lead text-muted">Stay compliant and profitable with professional insights tailored for the Kenyan market.</p>
                 </div>
                 <div class="col-lg-5">
                     <form action="#" method="get" class="input-group shadow-sm">
@@ -161,7 +166,7 @@
                             <div class="p-4">
                                 <span class="text-muted small">March 15, 2026</span>
                                 <h3 class="h5 fw-bold mt-2">Automating Your Payroll with ICT Solutions</h3>
-                                <p class="small text-muted">How small firms are saving 20+ hours a month using automated reconciliation.</p>
+                                <p class="small text-muted">Saving 20+ hours a month using automated M-Pesa API reconciliation.</p>
                                 <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">View Article</a>
                             </div>
                         </article>
@@ -171,7 +176,7 @@
                             <div class="p-4">
                                 <span class="text-muted small">March 10, 2026</span>
                                 <h3 class="h5 fw-bold mt-2">IFRS Updates for Meru Agricultural Exports</h3>
-                                <p class="small text-muted">Specialized reporting standards for the horticultural and export sectors.</p>
+                                <p class="small text-muted">Reporting standards for the horticultural and export sectors in Meru.</p>
                                 <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">View Article</a>
                             </div>
                         </article>
@@ -180,19 +185,22 @@
             </div>
 
             <aside class="col-lg-4">
-                <div class="p-4 rounded-3 border bg-white mb-4 shadow-sm">
-                    <h5 class="fw-bold mb-3">Popular Resources</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3 pb-2 border-bottom"><a href="#" class="text-decoration-none text-dark">KRA Nil Returns Guide</a></li>
-                        <li class="mb-3 pb-2 border-bottom"><a href="#" class="text-decoration-none text-dark">M-Pesa Business API Setup</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Investment Opportunities in Meru County</a></li>
-                    </ul>
+                <div class="p-4 rounded-3 border bg-white mb-4 shadow-sm" style="border-left: 5px solid #dc3545 !important;">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="spinner-grow spinner-grow-sm text-danger me-2" role="status"></div>
+                        <h5 class="fw-bold mb-0">Live Kenya News</h5>
+                    </div>
+                    <div id="kenya-news-container">
+                        <p class="small text-muted italic">Analyzing latest financial shifts...</p>
+                    </div>
+                    <hr>
+                    <small class="text-muted" style="font-size: 0.7rem;">Powered by DK AI Integrated Feed</small>
                 </div>
-                
+
                 <div class="p-4 rounded-3 text-white text-center shadow-sm" style="background: var(--dark-charcoal)">
-                    <h5 class="fw-bold">Free Tax Checklist</h5>
-                    <p class="small">Is your business audit-ready for the next fiscal quarter?</p>
-                    <button class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">Download PDF Guide</button>
+                    <h5 class="fw-bold">Audit-Ready?</h5>
+                    <p class="small">Download our 'Business Compliance 2026' whitepaper.</p>
+                    <button class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">Download PDF</button>
                 </div>
             </aside>
         </div>
@@ -201,27 +209,27 @@
             <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card">
+                    <div class="p-4 shadow-sm rounded resource-card text-center">
                         <i class="fas fa-calculator mb-3 fs-3 text-primary"></i>
                         <h4 class="h5">PAYE Calculator</h4>
-                        <p class="small text-muted">Quickly estimate your monthly tax obligations based on 2026 rates.</p>
+                        <p class="small text-muted">Estimate monthly tax obligations based on the latest 2026 rates.</p>
                         <a href="#" class="btn btn-sm btn-outline-primary">Use Tool</a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card">
-                        <i class="fas fa-file-invoice-dollar mb-3 fs-3 text-success"></i>
+                    <div class="p-4 shadow-sm rounded resource-card text-center">
+                        <i class="fas fa-calendar-alt mb-3 fs-3 text-success"></i>
                         <h4 class="h5">Compliance Calendar</h4>
-                        <p class="small text-muted">Sync KRA, NSSF, and NHIF deadlines to your Google Calendar.</p>
+                        <p class="small text-muted">Sync KRA, NSSF, and NHIF deadlines to your calendar.</p>
                         <a href="#" class="btn btn-sm btn-outline-primary">Get Calendar</a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card">
+                    <div class="p-4 shadow-sm rounded resource-card text-center">
                         <i class="fas fa-graduation-cap mb-3 fs-3 text-warning"></i>
                         <h4 class="h5">ICT Training Portal</h4>
-                        <p class="small text-muted">Lecture notes and materials for our ICT and Accountancy students.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Access Portal</a>
+                        <p class="small text-muted">Resources for ICT and Accountancy students. Secure login required.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Student Login</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +237,7 @@
 
         <section class="newsletter-box text-center shadow">
             <h2 class="fw-bold mb-3">Subscribe to Global Insights</h2>
-            <p class="mb-4">Weekly precision strategy updates for Kenyan and International enterprises.</p>
+            <p class="mb-4">Weekly precision strategy updates for Kenyan enterprises.</p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form class="input-group">
@@ -270,6 +278,51 @@
         </div>
     </footer>
 
+    <script>
+        const NEWS_API_KEY = 'bf4cdfd4e043420b9e3d34ec8e6d9eba';
+
+        async function fetchKenyaFinanceNews() {
+            const container = document.getElementById('kenya-news-container');
+            const query = encodeURIComponent('Kenya AND (Finance OR Tax OR KRA OR Business)');
+            const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&pageSize=4&apiKey=${NEWS_API_KEY}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.status === "ok" && data.articles.length > 0) {
+                    container.innerHTML = '';
+                    data.articles.forEach(article => {
+                        const pubDate = new Date(article.publishedAt).toLocaleDateString('en-KE', {
+                            day: '2-digit',
+                            month: 'short'
+                        });
+
+                        const newsItem = `
+                            <div class="news-item mb-3 pb-2 border-bottom">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <span class="badge bg-light text-primary border" style="font-size: 0.65rem;">${pubDate}</span>
+                                    <small class="text-muted" style="font-size: 0.6rem;">${article.source.name}</small>
+                                </div>
+                                <h6 class="mb-1">
+                                    <a href="${article.url}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">
+                                        ${article.title}
+                                    </a>
+                                </h6>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', newsItem);
+                    });
+                } else {
+                    container.innerHTML = '<p class="small text-muted">Updates are being processed. Check back shortly.</p>';
+                }
+            } catch (error) {
+                container.innerHTML = '<p class="small text-danger">Temporary feed interruption.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchKenyaFinanceNews);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
