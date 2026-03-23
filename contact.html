@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | DK ACCOUNT FIRM - Meru, Kenya</title>
     
+    <title>Contact Us | DK ACCOUNT FIRM - Tax & Audit Experts in Meru</title>
+    <meta name="description" content="Contact DK Account Firm in Meru for professional Tax Strategy, Audit, Bookkeeping, and Business Advisory. Reach us at +254 110 311 712.">
+    <meta name="keywords" content="Accountant in Meru, Tax Filing Kenya, Audit Services Meru, DK Account Firm, KRA Tax Returns, Bookkeeping Kenya, ICPAK Accountants">
+    <meta name="author" content="DK Account Firm">
+    
+    <meta property="og:title" content="Contact DK Account Firm - Meru">
+    <meta property="og:description" content="Professional financial solutions for businesses in Kenya.">
+    <meta property="og:type" content="website">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,6 +22,7 @@
             --sky-blue: #0ea5e9; 
             --light-sky-blue: #f0f9ff;
             --dark-charcoal: #1A202C;
+            --whatsapp-green: #25D366;
         }
 
         body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); }
@@ -22,7 +31,6 @@
         .navbar { background-color: var(--sky-blue) !important; padding: 1rem 2rem; }
         .navbar-brand, .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 15px; }
 
-        /* White Outline Button in Nav */
         .btn-sky-outline {
             background-color: transparent;
             border: 2px solid #ffffff;
@@ -33,60 +41,67 @@
             transition: all 0.3s;
             text-decoration: none;
         }
-
-        .btn-sky-outline:hover {
-            background-color: #ffffff;
-            color: var(--sky-blue) !important;
-        }
+        .btn-sky-outline:hover { background-color: #ffffff; color: var(--sky-blue) !important; }
 
         /* Header */
         .contact-header {
             padding: 80px 0;
             background: linear-gradient(rgba(14, 165, 233, 0.9), rgba(14, 165, 233, 0.9)), 
                         url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: white;
-            text-align: center;
+            background-size: cover; color: white; text-align: center;
         }
 
-        /* Contact Section */
         .contact-card {
-            background: #ffffff;
-            border-radius: 15px;
+            background: #ffffff; border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-top: -60px;
-            border: none;
+            overflow: hidden; margin-top: -60px; border: none;
         }
 
-        .form-control:focus {
-            border-color: var(--sky-blue);
-            box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25);
-        }
+        .form-control:focus { border-color: var(--sky-blue); box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25); }
 
         .btn-send {
-            background-color: var(--sky-blue);
-            color: white;
-            font-weight: 700;
-            padding: 12px 30px;
-            border: none;
-            transition: 0.3s;
+            background-color: var(--sky-blue); color: white; font-weight: 700;
+            padding: 12px 30px; border: none; transition: 0.3s;
         }
-
-        .btn-send:hover { background-color: #0284c7; color: white; transform: translateY(-2px); }
+        .btn-send:hover { background-color: #0284c7; transform: translateY(-2px); }
 
         .map-container { min-height: 450px; height: 100%; width: 100%; border-radius: 15px; }
 
-        /* Footer Custom Styling */
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; color: white; transform: scale(1.1); }
+
+        /* Footer */
         footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
         footer h5, footer p, footer li, footer small { color: #ffffff !important; }
         .footer-logo { font-weight: 800; font-size: 1.5rem; }
         .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
         footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
-        .badge.border-white { font-weight: 500; }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/254110311712?text=Hello%20DK%20Account%20Firm,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -142,7 +157,7 @@
 
             <div class="col-lg-6 p-0">
                 <iframe class="map-container border-0" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.914441058226!2d37.6415712!3d0.0514125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1788219602416f49%3A0x633857e4e840d4!2sMeru!5e0!3m2!1sen!2ske!4v1711200000000!5m2!1sen!2ske" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31917.44840428574!2d37.6375059!3d0.0514801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178820f1882d9691%3A0x67399479383633e8!2sMeru!5e0!3m2!1sen!2ske!4v1711200000000!5m2!1sen!2ske" 
                     allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
