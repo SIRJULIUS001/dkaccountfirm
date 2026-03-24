@@ -83,7 +83,16 @@
         .news-link:hover { color: var(--sky-blue) !important; }
         .news-item:last-child { border-bottom: none !important; }
 
-        /* Resource Section */
+        /* Resource Section & Layout Fix */
+        #toolbox {
+            clear: both; /* Fix for overlapping text */
+            margin-top: 100px !important; /* Forces gap between articles and toolbox */
+            padding-top: 60px;
+            position: relative;
+            z-index: 5;
+            background: #fff;
+        }
+
         .resource-card {
             background: #fff;
             border-top: 4px solid var(--sky-blue);
@@ -224,7 +233,7 @@
             </aside>
         </div>
 
-        <section class="py-5 mt-5 border-top">
+        <section id="toolbox" class="py-5 border-top">
             <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Interactive Resources</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -282,8 +291,9 @@
             <p class="mb-4">Weekly precision strategy updates for Kenyan enterprises.</p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form class="input-group">
-                        <input type="email" class="form-control p-3" placeholder="yourname@email.com" required>
+                    <form action="https://formspree.io/f/your-id-here" method="POST" class="input-group">
+                        <input type="email" name="email" class="form-control p-3" placeholder="yourname@email.com" required>
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/insights.html">
                         <button type="submit" class="btn btn-dark px-4 fw-bold">Join Now</button>
                     </form>
                 </div>
