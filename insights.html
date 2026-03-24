@@ -100,6 +100,24 @@
             margin-top: 60px;
         }
 
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
         footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
         .footer-logo { font-weight: bold; font-size: 1.5rem; }
         .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
@@ -207,18 +225,23 @@
         </div>
 
         <section class="py-5 mt-5 border-top">
-            <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox</span></h2>
+            <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Interactive Resources</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card text-center">
-                        <i class="fas fa-calculator mb-3 fs-3 text-primary"></i>
-                        <h4 class="h5">PAYE Calculator</h4>
-                        <p class="small text-muted">Estimate monthly tax obligations based on the latest 2026 rates.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Use Tool</a>
+                    <div class="p-4 shadow-sm rounded resource-card h-100">
+                        <h4 class="h5 fw-bold text-center"><i class="fas fa-calculator mb-3 fs-3 text-primary d-block"></i>Quick Calculator</h4>
+                        <div class="mb-2">
+                            <input type="number" id="calcAmount" class="form-control form-control-sm" placeholder="Amount (KES)">
+                        </div>
+                        <div class="d-flex gap-1 mb-2">
+                            <button onclick="calculateVAT(0.16)" class="btn btn-xs btn-outline-primary w-100" style="font-size:0.7rem;">16% VAT</button>
+                            <button onclick="calculateMpesa()" class="btn btn-xs btn-dark w-100" style="font-size:0.7rem;">M-Pesa Fee</button>
+                        </div>
+                        <div id="calcResult" class="small p-2 bg-light rounded text-center fw-bold" style="display:none; color: var(--sky-blue);"></div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card text-center">
+                    <div class="p-4 shadow-sm rounded resource-card text-center h-100">
                         <i class="fas fa-calendar-alt mb-3 fs-3 text-success"></i>
                         <h4 class="h5">Compliance Calendar</h4>
                         <p class="small text-muted">Sync KRA, NSSF, and NHIF deadlines to your calendar.</p>
@@ -226,12 +249,30 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card text-center">
-                        <i class="fas fa-graduation-cap mb-3 fs-3 text-warning"></i>
-                        <h4 class="h5">ICT Training Portal</h4>
-                        <p class="small text-muted">Resources for ICT and Accountancy students. Secure login required.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Student Login</a>
+                    <div class="p-4 shadow-sm rounded resource-card h-100" id="quizContainer">
+                        <h4 class="h5 fw-bold text-center"><i class="fas fa-heartbeat mb-3 fs-3 text-danger d-block"></i>KRA Health Check</h4>
+                        <p class="small text-muted text-center" id="quizQuestion">Are your ETR/TIMS sales reconciled with iTax?</p>
+                        <div class="d-flex gap-2">
+                            <button onclick="nextQuestion(true)" class="btn btn-sm btn-success w-100">Yes</button>
+                            <button onclick="nextQuestion(false)" class="btn btn-sm btn-outline-danger w-100">No</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row g-4 mt-2">
+            <div class="col-lg-8">
+                <div class="p-4 rounded-4 bg-dark text-white h-100">
+                    <h4 class="fw-bold"><i class="fas fa-shield-alt me-2 text-info"></i>Secure Client File Drop</h4>
+                    <p class="small text-muted">Upload bank statements or P9 forms securely using encrypted channels.</p>
+                    <button class="btn btn-sky btn-sm"><i class="fas fa-cloud-upload-alt me-2"></i>Secure Upload</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-4 rounded-4 border bg-white h-100">
+                    <h5 class="fw-bold text-primary">Meru Business Spotlight</h5>
+                    <p class="small text-muted mb-0">Updates on local permits and horticultural export tax incentives in Meru County.</p>
                 </div>
             </div>
         </section>
@@ -249,6 +290,10 @@
             </div>
         </section>
     </main>
+
+    <a href="https://wa.me/254110311712" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp" style="margin-top:16px;"></i>
+    </a>
 
     <footer>
         <div class="container">
@@ -299,35 +344,56 @@
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-
                 if (data.status === "ok" && data.articles.length > 0) {
                     container.innerHTML = '';
                     data.articles.forEach(article => {
-                        const pubDate = new Date(article.publishedAt).toLocaleDateString('en-KE', {
-                            day: '2-digit',
-                            month: 'short'
-                        });
-
+                        const pubDate = new Date(article.publishedAt).toLocaleDateString('en-KE', {day: '2-digit', month: 'short'});
                         const newsItem = `
                             <div class="news-item mb-3 pb-2 border-bottom">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-light text-primary border" style="font-size: 0.65rem;">${pubDate}</span>
                                     <small class="text-muted" style="font-size: 0.6rem;">${article.source.name}</small>
                                 </div>
-                                <h6 class="mb-1">
-                                    <a href="${article.url}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">
-                                        ${article.title}
-                                    </a>
-                                </h6>
-                            </div>
-                        `;
+                                <h6 class="mb-1"><a href="${article.url}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">${article.title}</a></h6>
+                            </div>`;
                         container.insertAdjacentHTML('beforeend', newsItem);
                     });
                 } else {
-                    container.innerHTML = '<p class="small text-muted">Updates are being processed. Check back shortly.</p>';
+                    container.innerHTML = '<p class="small text-muted">Updates are being processed.</p>';
                 }
             } catch (error) {
                 container.innerHTML = '<p class="small text-danger">Temporary feed interruption.</p>';
+            }
+        }
+
+        // VAT & M-Pesa Tool Logic
+        function calculateVAT(rate) {
+            const amt = document.getElementById('calcAmount').value;
+            const res = document.getElementById('calcResult');
+            if(!amt) return;
+            const vat = amt * rate;
+            res.style.display = 'block';
+            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${(parseFloat(amt)+vat).toLocaleString()}`;
+        }
+
+        function calculateMpesa() {
+            const amt = document.getElementById('calcAmount').value;
+            const res = document.getElementById('calcResult');
+            if(!amt) return;
+            let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; // Simplified example
+            res.style.display = 'block';
+            res.innerHTML = `Estimated Transfer Fee: KES ${fee}`;
+        }
+
+        // Quiz Logic
+        let step = 0;
+        const qs = ["Are your ETR/TIMS sales reconciled?", "Do you have a valid Tax Certificate?", "Is your NSSF/NHIF up to date?", "Filed 2025 annual returns?"];
+        function nextQuestion(val) {
+            step++;
+            if(step < qs.length) {
+                document.getElementById('quizQuestion').innerText = qs[step];
+            } else {
+                document.getElementById('quizContainer').innerHTML = '<div class="text-center text-success"><i class="fas fa-check-circle fs-2"></i><p class="small mt-2">Check complete. Contact us for a full audit.</p><a href="contact.html" class="btn btn-xs btn-primary">Connect</a></div>';
             }
         }
 
