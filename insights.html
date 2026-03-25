@@ -228,7 +228,7 @@
                 <div class="p-4 rounded-3 text-white text-center shadow-sm" style="background: var(--dark-charcoal)">
                     <h5 class="fw-bold">Audit-Ready?</h5>
                     <p class="small">Download our 'Business Compliance 2026' whitepaper.</p>
-                    <button class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">Download PDF</button>
+                    <a href="assets/docs/KRA_Compliance_2026.pdf" download class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">Download PDF</a>
                 </div>
             </aside>
         </div>
@@ -275,7 +275,7 @@
                 <div class="p-4 rounded-4 bg-dark text-white h-100">
                     <h4 class="fw-bold"><i class="fas fa-shield-alt me-2 text-info"></i>Secure Client File Drop</h4>
                     <p class="small text-muted">Upload bank statements or P9 forms securely using encrypted channels.</p>
-                    <button class="btn btn-sky btn-sm"><i class="fas fa-cloud-upload-alt me-2"></i>Secure Upload</button>
+                    <a href="https://portal.dkaccountfirm.com" class="btn btn-sky btn-sm"><i class="fas fa-cloud-upload-alt me-2"></i>Secure Upload</a>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -291,9 +291,9 @@
             <p class="mb-4">Weekly precision strategy updates for Kenyan enterprises.</p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form action="https://formspree.io/f/your-id-here" method="POST" class="input-group">
+                    <form action="https://formspree.io/f/YOUR_ACTUAL_ID" method="POST" class="input-group">
                         <input type="email" name="email" class="form-control p-3" placeholder="yourname@email.com" required>
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/insights.html">
+                        <input type="hidden" name="_next" value="https://www.dkaccount.com/insights.html">
                         <button type="submit" class="btn btn-dark px-4 fw-bold">Join Now</button>
                     </form>
                 </div>
@@ -344,27 +344,31 @@
     </footer>
 
     <script>
-        const NEWS_API_KEY = 'bf4cdfd4e043420b9e3d34ec8e6d9eba';
+        // FIX: NewsData.io API Key logic
+        const NEWS_API_KEY = 'pub_719047970875c759550304620021319084877';
 
         async function fetchKenyaFinanceNews() {
             const container = document.getElementById('kenya-news-container');
-            const query = encodeURIComponent('Kenya AND (Finance OR Tax OR KRA OR Business)');
-            const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=publishedAt&pageSize=4&apiKey=${NEWS_API_KEY}`;
+            // NewsData.io endpoint structure
+            const url = `https://newsdata.io/api/1/latest?apikey=${NEWS_API_KEY}&country=ke&category=business,technology&language=en`;
 
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                if (data.status === "ok" && data.articles.length > 0) {
+                
+                if (data.status === "success" && data.results && data.results.length > 0) {
                     container.innerHTML = '';
-                    data.articles.forEach(article => {
-                        const pubDate = new Date(article.publishedAt).toLocaleDateString('en-KE', {day: '2-digit', month: 'short'});
+                    data.results.slice(0, 4).forEach(article => {
+                        const pubDate = new Date(article.pubDate).toLocaleDateString('en-KE', {day: '2-digit', month: 'short'});
                         const newsItem = `
                             <div class="news-item mb-3 pb-2 border-bottom">
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <span class="badge bg-light text-primary border" style="font-size: 0.65rem;">${pubDate}</span>
-                                    <small class="text-muted" style="font-size: 0.6rem;">${article.source.name}</small>
+                                    <small class="text-muted" style="font-size: 0.6rem;">${article.source_id.toUpperCase()}</small>
                                 </div>
-                                <h6 class="mb-1"><a href="${article.url}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">${article.title}</a></h6>
+                                <h6 class="mb-1">
+                                    <a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">${article.title}</a>
+                                </h6>
                             </div>`;
                         container.insertAdjacentHTML('beforeend', newsItem);
                     });
@@ -372,6 +376,7 @@
                     container.innerHTML = '<p class="small text-muted">Updates are being processed.</p>';
                 }
             } catch (error) {
+                console.error("News Fetch Error:", error);
                 container.innerHTML = '<p class="small text-danger">Temporary feed interruption.</p>';
             }
         }
@@ -390,7 +395,7 @@
             const amt = document.getElementById('calcAmount').value;
             const res = document.getElementById('calcResult');
             if(!amt) return;
-            let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; // Simplified example
+            let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; 
             res.style.display = 'block';
             res.innerHTML = `Estimated Transfer Fee: KES ${fee}`;
         }
