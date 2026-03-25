@@ -459,18 +459,22 @@
         }
 
         function calculateVAT(rate) {
-            const amt = document.getElementById('calcAmount').value;
+            const amtStr = document.getElementById('calcAmount').value;
             const res = document.getElementById('calcResult');
-            if(!amt) return;
+            if(!amtStr) return;
+            
+            const amt = parseFloat(amtStr);
             const vat = amt * rate;
             res.style.display = 'block';
-            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${(parseFloat(amt)+vat).toLocaleString()}`;
+            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${(amt + vat).toLocaleString()}`;
         }
 
         function calculateMpesa() {
-            const amt = document.getElementById('calcAmount').value;
+            const amtStr = document.getElementById('calcAmount').value;
             const res = document.getElementById('calcResult');
-            if(!amt) return;
+            if(!amtStr) return;
+            
+            const amt = parseFloat(amtStr);
             let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; 
             res.style.display = 'block';
             res.innerHTML = `Estimated Transfer Fee: KES ${fee}`;
