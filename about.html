@@ -125,7 +125,20 @@
             display: block;
         }
 
-        /* Branding Strip */
+        /* Footer Integration */
+        footer {
+            background: var(--sky-blue);
+            color: white;
+            padding: 80px 0 20px;
+            margin-top: 80px;
+        }
+        .footer-logo { font-weight: 900; font-size: 1.6rem; letter-spacing: -0.5px; }
+        .sky-line { height: 3px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
+        footer p, footer li { opacity: 0.85; font-size: 0.95rem; }
+        footer hr { border-top: 1px solid rgba(255,255,255,0.2); }
+        .badge { padding: 8px 12px; font-weight: 600; border-radius: 6px; }
+
+        /* Tech Strip */
         .tech-stack-strip {
             filter: grayscale(1);
             opacity: 0.6;
@@ -133,34 +146,22 @@
         }
         .tech-stack-strip:hover { filter: grayscale(0); opacity: 1; }
 
-        /* Footer */
-        footer {
-            background: var(--sky-blue);
-            color: white;
-            padding: 80px 0 40px;
-        }
-        .footer-link { color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transition); }
-        .footer-link:hover { color: var(--sky-blue); padding-left: 5px; }
-
-        /* Floating WhatsApp */
-        .whatsapp-btn {
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 60px; height: 60px;
+            bottom: 40px; right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            display: flex; align-items: center; justify-content: center;
             font-size: 30px;
             box-shadow: 0 10px 20px rgba(37,211,102,0.3);
             z-index: 1000;
+            text-decoration: none;
             transition: var(--transition);
         }
-        .whatsapp-btn:hover { transform: scale(1.1); color: white; }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
 
         @media (max-width: 768px) {
             .main-content-card { padding: 30px 20px; border-radius: 20px; }
@@ -320,54 +321,43 @@
 
     <footer>
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h4 class="fw-black mb-4">DK ACCOUNT FIRM</h4>
-                    <p class="text-white-50">Providing precision accounting and innovative ICT solutions across Kenya. From Meru to the world.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">DK ACCOUNT FIRM</div>
+                    <div class="sky-line"></div>
+                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Bookkeeping</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Payroll</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Tax Filing</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Audit</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Certifications</h5>
+                    <div class="d-flex gap-2 mt-3">
+                        <span class="badge border border-white">CPA(K)</span>
+                        <span class="badge border border-white">ACCA</span>
+                        <span class="badge border border-white">KRA</span>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <h6 class="fw-bold mb-4">Navigation</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="services.html" class="footer-link">Our Services</a></li>
-                        <li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
-                        <li class="mb-2"><a href="insights.html" class="footer-link">Tax Insights</a></li>
-                        <li class="mb-2"><a href="contact.html" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="fw-bold mb-4">Core Focus</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2">Tax Compliance</li>
-                        <li class="mb-2">Audit & Assurance</li>
-                        <li class="mb-2">ICT Consulting</li>
-                        <li class="mb-2">Payroll Systems</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h6 class="fw-bold mb-4">Contact Us</h6>
-                    <p class="small mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Meru-Nanyuki Hwy, Meru Town</p>
-                    <p class="small mb-2"><i class="fas fa-phone text-primary me-2"></i> +254 110 311 712</p>
-                    <p class="small"><i class="fas fa-envelope text-primary me-2"></i> dkirimi152@gmail.com</p>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="fw-bold">Contact</h5>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
+                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
                 </div>
             </div>
-            <hr class="mt-5 mb-4 border-secondary">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <small class="text-white-50">&copy; 2026 DK Account Firm. All Rights Reserved.</small>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <small class="text-white-50">Designed with Unfailing Exactness.</small>
-                </div>
+            <hr>
+            <div class="text-center py-3">
+                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/254110311712" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/254110311712?text=Hello%20DK%20Account%20Firm,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
