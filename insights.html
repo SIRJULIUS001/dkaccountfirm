@@ -83,11 +83,11 @@
         .news-link:hover { color: var(--sky-blue) !important; }
         .news-item:last-child { border-bottom: none !important; }
 
-        /* Resource Section & Layout Fix */
+        /* Resource Section & Layout Fix - UPDATED to prevent overlapping */
         #toolbox {
-            clear: both !important; /* Critical fix for overlapping */
-            margin-top: 120px !important; /* Forces healthy gap */
-            padding-top: 60px;
+            clear: both !important; 
+            margin-top: 150px !important; /* Increased gap to prevent screenshot overlap */
+            padding-top: 80px;
             position: relative;
             z-index: 5;
             background: #fff;
@@ -256,7 +256,7 @@
                         <i class="fas fa-calendar-alt mb-3 fs-3 text-success"></i>
                         <h4 class="h5">Compliance Calendar</h4>
                         <p class="small text-muted">Sync KRA, NSSF, and NHIF deadlines to your calendar.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Get Calendar</a>
+                        <a href="https://www.kra.go.ke/en/individual/filing-paying/types-of-taxes/important-dates" target="_blank" class="btn btn-sm btn-outline-primary">View Dates</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -277,7 +277,7 @@
                 <div class="p-4 rounded-4 bg-dark text-white h-100">
                     <h4 class="fw-bold"><i class="fas fa-shield-alt me-2 text-info"></i>Secure Client File Drop</h4>
                     <p class="small text-muted">Upload bank statements or P9 forms securely using encrypted channels.</p>
-                    <a href="contact.html" class="btn btn-sky btn-sm"><i class="fas fa-cloud-upload-alt me-2"></i>Secure Upload</a>
+                    <a href="https://portal.dkaccountfirm.com/upload" class="btn btn-sky btn-sm"><i class="fas fa-cloud-upload-alt me-2"></i>Secure Upload</a>
                 </div>
             </div>
             <div class="col-lg-4">
