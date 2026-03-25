@@ -38,7 +38,7 @@
     <style>
         :root {
             --sky-blue: #0ea5e9; 
-            --light-sky-blue: #f8fafc;
+            --light-sky-blue: #f0f9ff;
             --dark-charcoal: #0f172a;
             --container-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
@@ -52,41 +52,43 @@
             letter-spacing: -0.011em;
         }
 
+        /* Navbar matched to index.html */
         .navbar {
             background-color: var(--sky-blue) !important;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .navbar-brand {
             color: #ffffff !important;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+        .navbar-brand span {
+            font-weight: 300;
         }
         .nav-link {
             color: #ffffff !important;
             font-weight: 500;
-            opacity: 0.9;
+            transition: 0.3s;
         }
-        .nav-link:hover { opacity: 1; }
+        .nav-link:hover { transform: translateY(-2px); }
 
         .btn-outline-white {
             border: 2px solid #ffffff;
             color: #ffffff !important;
-            padding: 8px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
             text-decoration: none;
         }
         .btn-outline-white:hover {
             background: #ffffff;
             color: var(--sky-blue) !important;
-            transform: translateY(-2px);
         }
 
         .about-hero {
             padding: 160px 0 220px 0;
-            background: linear-gradient(rgba(248, 250, 252, 0.96), rgba(248, 250, 252, 0.92)), 
+            background: linear-gradient(rgba(240, 249, 255, 0.96), rgba(240, 249, 255, 0.92)), 
                         url('https://images.unsplash.com/photo-1454165833767-131f369ed33d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
@@ -96,8 +98,8 @@
         .floating-about-card {
             margin-top: -160px;
             background: #ffffff;
-            border-top: 8px solid var(--sky-blue);
-            border-radius: 24px;
+            border-top: 5px solid var(--sky-blue);
+            border-radius: 15px;
             padding: 80px 60px;
             box-shadow: var(--container-shadow);
             position: relative;
@@ -130,7 +132,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(0,0,0,0.03);
             height: 100%;
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.4s;
         }
         .method-card:hover {
             transform: translateY(-10px);
@@ -165,17 +167,15 @@
             opacity: 1; 
         }
 
+        /* Footer matched to index.html (Blue/Centered) */
         footer {
-            background-color: var(--dark-charcoal);
-            color: #ffffff !important;
-            padding: 80px 0 40px 0;
+            background-color: var(--sky-blue);
+            color: #ffffff;
+            padding: 60px 0;
             margin-top: 120px;
+            text-align: center;
         }
-        .footer-logo { font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.5px; }
-        .sky-line { height: 3px; width: 60px; background: var(--sky-blue); margin: 15px 0 25px 0; }
-        footer h5, footer p, footer small, footer ul li { color: rgba(255,255,255,0.8) !important; }
-        footer hr { border-top: 1px solid rgba(255,255,255,0.1); }
-        .badge-outline { border: 2px solid var(--sky-blue); background: transparent; padding: 6px 15px; font-weight: 700; border-radius: 6px; color: white; }
+        .footer-logo { font-weight: 700; font-size: 1.5rem; margin-bottom: 15px; }
 
         .whatsapp-float {
             position: fixed;
@@ -204,7 +204,7 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">DK ACCOUNT FIRM</a>
+            <a class="navbar-brand" href="index.html">DK <span>ACCOUNT FIRM</span></a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
@@ -332,40 +332,15 @@
 
     <footer>
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="footer-logo">DK ACCOUNT FIRM</div>
-                    <div class="sky-line"></div>
-                    <p class="opacity-75">Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya.</p>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
-                    <ul class="list-unstyled opacity-75">
-                        <li class="mb-2">Bookkeeping</li>
-                        <li class="mb-2">Payroll</li>
-                        <li class="mb-2">Tax Filing</li>
-                        <li class="mb-2">Audit</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-4">Certifications</h5>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <span class="badge badge-outline">CPA(K)</span>
-                        <span class="badge badge-outline">ACCA</span>
-                        <span class="badge badge-outline">KRA</span>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-4">Contact</h5>
-                    <p class="mb-1"><i class="fas fa-phone me-2 text-info"></i> +254 110 311 712</p>
-                    <p class="mb-1"><i class="fas fa-envelope me-2 text-info"></i> dkirimi152@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2 text-info"></i> Meru, Kenya</p>
-                </div>
+            <div class="footer-logo">DK ACCOUNT FIRM</div>
+            <p class="mb-4">Unfailing Exactness in Every Detail</p>
+            <div class="mb-4">
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white text-decoration-none"><i class="fab fa-linkedin"></i></a>
             </div>
-            <hr class="my-5">
-            <div class="text-center">
-                <small class="opacity-50">&copy; 2026 DK Account Firm. All Rights Reserved.</small>
-            </div>
+            <hr class="bg-white opacity-25">
+            <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
         </div>
     </footer>
 
