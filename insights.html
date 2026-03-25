@@ -79,16 +79,21 @@
         }
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(14, 165, 233, 0.1); }
         
-        /* Fixed: Using standard img tag inside card, so .article-img class is updated to handle child img */
+        /* UPDATED: Sleeker Image Container */
         .article-img-container { 
-            height: 350px; 
+            height: 250px; /* Reduced from 350px for professional balance */
             overflow: hidden;
-            background-color: #ddd; 
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); /* Soft gradient instead of flat grey */
+            position: relative;
         }
         .article-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .article-card:hover .article-img-container img {
+            transform: scale(1.05);
         }
 
         .article-card .p-4 {
