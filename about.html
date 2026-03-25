@@ -126,42 +126,47 @@
         }
 
         /* Footer Integration */
-        footer {
-            background: var(--sky-blue);
-            color: white;
-            padding: 80px 0 20px;
-            margin-top: 80px;
+         footer {
+            background-color: var(--sky-blue);
+            color: #ffffff !important;
+            padding: 60px 0 20px 0;
         }
-        .footer-logo { font-weight: 900; font-size: 1.6rem; letter-spacing: -0.5px; }
-        .sky-line { height: 3px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
-        footer p, footer li { opacity: 0.85; font-size: 0.95rem; }
-        footer hr { border-top: 1px solid rgba(255,255,255,0.2); }
-        .badge { padding: 8px 12px; font-weight: 600; border-radius: 6px; }
 
-        /* Tech Strip */
-        .tech-stack-strip {
-            filter: grayscale(1);
-            opacity: 0.6;
-            transition: var(--transition);
+        .footer-logo { font-weight: 800; font-size: 1.5rem; color: #ffffff; }
+
+        .sky-line {
+            height: 2px;
+            width: 50px;
+            background: #ffffff;
+            margin: 10px 0 20px 0;
         }
-        .tech-stack-strip:hover { filter: grayscale(0); opacity: 1; }
 
-        /* WhatsApp Floating Button */
+        footer h5, footer .text-muted, footer p, footer small { color: #ffffff !important; }
+        footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
+
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            width: 60px; height: 60px;
-            bottom: 40px; right: 40px;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
-            display: flex; align-items: center; justify-content: center;
+            text-align: center;
             font-size: 30px;
-            box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-        .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
+        .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); color: #fff; }
+       
 
         @media (max-width: 768px) {
             .main-content-card { padding: 30px 20px; border-radius: 20px; }
