@@ -49,13 +49,13 @@
             color: var(--dark-charcoal);
             overflow-x: hidden;
             line-height: 1.6;
-            letter-spacing: -0.011em; /* Optimized for Inter */
+            letter-spacing: -0.011em;
         }
 
-        /* Nav with White Outline Button */
         .navbar {
             background-color: var(--sky-blue) !important;
             padding: 1.2rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .navbar-brand {
             color: #ffffff !important;
@@ -84,18 +84,17 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
         .about-hero {
-            padding: 140px 0 200px 0;
-            background: linear-gradient(rgba(248, 250, 252, 0.94), rgba(248, 250, 252, 0.94)), 
+            padding: 160px 0 220px 0;
+            background: linear-gradient(rgba(248, 250, 252, 0.96), rgba(248, 250, 252, 0.92)), 
                         url('https://images.unsplash.com/photo-1454165833767-131f369ed33d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
+            background-position: center;
             text-align: center;
         }
 
-        /* High Visibility Floating Card */
         .floating-about-card {
-            margin-top: -140px;
+            margin-top: -160px;
             background: #ffffff;
             border-top: 8px solid var(--sky-blue);
             border-radius: 24px;
@@ -124,7 +123,6 @@
             margin-bottom: 15px;
         }
 
-        /* Methodology & Tech Styles */
         .method-card {
             background: #ffffff;
             padding: 40px 25px;
@@ -132,11 +130,12 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(0,0,0,0.03);
             height: 100%;
-            transition: 0.3s;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .method-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: var(--container-shadow);
+            border-color: var(--sky-blue);
         }
 
         .step-number { 
@@ -166,20 +165,18 @@
             opacity: 1; 
         }
 
-        /* Footer */
         footer {
-            background-color: var(--sky-blue);
+            background-color: var(--dark-charcoal);
             color: #ffffff !important;
             padding: 80px 0 40px 0;
             margin-top: 120px;
         }
         .footer-logo { font-weight: 900; font-size: 1.8rem; color: #ffffff; letter-spacing: -0.5px; }
-        .sky-line { height: 3px; width: 60px; background: #ffffff; margin: 15px 0 25px 0; }
-        footer h5, footer p, footer small, footer ul li { color: #ffffff !important; }
-        footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
-        .badge-outline { border: 2.5px solid #ffffff; background: transparent; padding: 6px 15px; font-weight: 700; border-radius: 6px; }
+        .sky-line { height: 3px; width: 60px; background: var(--sky-blue); margin: 15px 0 25px 0; }
+        footer h5, footer p, footer small, footer ul li { color: rgba(255,255,255,0.8) !important; }
+        footer hr { border-top: 1px solid rgba(255,255,255,0.1); }
+        .badge-outline { border: 2px solid var(--sky-blue); background: transparent; padding: 6px 15px; font-weight: 700; border-radius: 6px; color: white; }
 
-        /* WhatsApp */
         .whatsapp-float {
             position: fixed;
             width: 65px; height: 65px;
@@ -194,11 +191,12 @@
             transition: 0.3s;
             text-decoration: none;
         }
-        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); color: white; }
 
         @media (max-width: 768px) {
             .floating-about-card { padding: 40px 25px; }
             .display-3 { font-size: 2.8rem; }
+            .about-hero { padding: 100px 0 160px 0; }
         }
     </style>
 </head>
@@ -359,9 +357,9 @@
                 </div>
                 <div class="col-lg-3">
                     <h5 class="fw-bold mb-4">Contact</h5>
-                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
-                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Meru, Kenya</p>
+                    <p class="mb-1"><i class="fas fa-phone me-2 text-info"></i> +254 110 311 712</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2 text-info"></i> dkirimi152@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2 text-info"></i> Meru, Kenya</p>
                 </div>
             </div>
             <hr class="my-5">
