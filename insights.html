@@ -24,7 +24,7 @@
       "publisher": {
         "@type": "Organization",
         "name": "DK Account Firm",
-        "logo": "URL_TO_YOUR_LOGO"
+        "logo": "https://www.dkaccount.com/logo.png" 
       }
     }
     </script>
@@ -83,16 +83,11 @@
         .news-link:hover { color: var(--sky-blue) !important; }
         .news-item:last-child { border-bottom: none !important; }
 
-        /* Resource Section & Layout Fix - UPDATED to prevent overlapping */
+        /* Resource Section & Layout Fix */
         #toolbox {
-            clear: both !important; 
-            margin-top: 150px !important; /* Increased gap to prevent screenshot overlap */
-            padding-top: 80px;
-            position: relative;
-            z-index: 5;
+            padding: 80px 0;
             background: #fff;
-            display: block;
-            width: 100%;
+            border-top: 1px solid #eee;
         }
 
         .resource-card {
@@ -235,7 +230,7 @@
             </aside>
         </div>
 
-        <section id="toolbox" class="py-5 border-top">
+        <section id="toolbox" class="mt-5">
             <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Interactive Resources</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -293,7 +288,7 @@
             <p class="mb-4">Weekly precision strategy updates for Kenyan enterprises.</p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <form action="https://formspree.io/f/YOUR_ACTUAL_ID" method="POST" class="input-group">
+                    <form action="https://formspree.io/f/xeeryqga" method="POST" class="input-group">
                         <input type="email" name="email" class="form-control p-3" placeholder="yourname@email.com" required>
                         <input type="hidden" name="_next" value="https://www.dkaccount.com/insights.html">
                         <button type="submit" class="btn btn-dark px-4 fw-bold">Join Now</button>
@@ -381,19 +376,23 @@
             }
         }
 
+        // Logic Fix: Wrapped amt in parseFloat
         function calculateVAT(rate) {
-            const amt = document.getElementById('calcAmount').value;
+            const val = document.getElementById('calcAmount').value;
             const res = document.getElementById('calcResult');
-            if(!amt) return;
+            if(!val) return;
+            const amt = parseFloat(val);
             const vat = amt * rate;
+            const total = amt + vat;
             res.style.display = 'block';
-            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${(parseFloat(amt)+vat).toLocaleString()}`;
+            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${total.toLocaleString()}`;
         }
 
         function calculateMpesa() {
-            const amt = document.getElementById('calcAmount').value;
+            const val = document.getElementById('calcAmount').value;
             const res = document.getElementById('calcResult');
-            if(!amt) return;
+            if(!val) return;
+            const amt = parseFloat(val);
             let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; 
             res.style.display = 'block';
             res.innerHTML = `Estimated Transfer Fee: KES ${fee}`;
