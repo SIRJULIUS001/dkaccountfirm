@@ -12,7 +12,6 @@
     <meta property="og:url" content="https://www.dkaccountfirm.co.ke/about.html">
     <meta property="og:title" content="DK Account Firm | Unfailing Exactness in Every Detail">
     <meta property="og:description" content="Bridging the gap between financial precision and ICT innovation. Serving Meru, Nairobi, and beyond.">
-    <meta property="og:image" content="https://www.dkaccountfirm.co.ke/assets/img/og-preview.jpg">
 
     <script type="application/ld+json">
     {
@@ -27,8 +26,7 @@
       },
       "url": "https://www.dkaccountfirm.co.ke",
       "telephone": "+254110311712",
-      "priceRange": "$$",
-      "image": "https://www.dkaccountfirm.co.ke/assets/img/logo.png"
+      "priceRange": "$$"
     }
     </script>
     
@@ -49,13 +47,15 @@
             background-color: #ffffff;
             color: var(--deep-navy);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* Navbar Enhancement */
+        /* Navbar Enhancement - Matching Homepage */
         .navbar {
             background-color: var(--sky-blue) !important;
-            padding: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+            z-index: 1050;
+            width: 100%;
         }
         .navbar-brand { font-weight: 800; letter-spacing: -0.5px; color: white !important; }
         .nav-link { color: rgba(255,255,255,0.9) !important; font-weight: 500; margin: 0 10px; }
@@ -63,26 +63,38 @@
 
         .btn-cta-nav {
             border: 2px solid white;
-            color: white;
+            color: white !important;
             padding: 8px 24px;
             border-radius: 8px;
             font-weight: 700;
             transition: var(--transition);
             text-decoration: none;
+            display: inline-block;
         }
-        .btn-cta-nav:hover { background: white; color: var(--sky-blue); }
+        .btn-cta-nav:hover { background: white; color: var(--sky-blue) !important; }
+
+        /* Mobile Menu Fix */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--sky-blue);
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .btn-cta-nav { width: 100%; text-align: center; }
+        }
 
         /* Hero Section */
         .about-hero {
-            padding: 120px 0 160px;
+            padding: 80px 0 140px;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
             position: relative;
-            overflow: hidden;
         }
 
         /* Floating Content Card */
         .main-content-card {
-            margin-top: -100px;
+            margin-top: -80px;
             background: white;
             border-radius: 30px;
             padding: 60px;
@@ -125,22 +137,14 @@
             display: block;
         }
 
-        /* Footer Integration */
-         footer {
+        /* Footer */
+        footer {
             background-color: var(--sky-blue);
             color: #ffffff !important;
             padding: 60px 0 20px 0;
         }
-
         .footer-logo { font-weight: 800; font-size: 1.5rem; color: #ffffff; }
-
-        .sky-line {
-            height: 2px;
-            width: 50px;
-            background: #ffffff;
-            margin: 10px 0 20px 0;
-        }
-
+        .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
         footer h5, footer .text-muted, footer p, footer small { color: #ffffff !important; }
         footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
 
@@ -164,13 +168,12 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); color: #fff; }
-       
 
         @media (max-width: 768px) {
-            .main-content-card { padding: 30px 20px; border-radius: 20px; }
-            .display-4 { font-size: 2.5rem; }
+            .main-content-card { padding: 40px 20px; border-radius: 20px; }
+            .display-4 { font-size: 2.2rem; }
+            .motto-box { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -178,8 +181,8 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="fas fa-chart-line me-2"></i> DK ACCOUNT FIRM
+            <a class="navbar-brand d-flex align-items-center text-nowrap" href="index.html">
+                <i class="fas fa-chart-line me-2"></i> DK <span class="ms-1">ACCOUNT FIRM</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
@@ -238,13 +241,13 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <div class="p-4 p-md-5 rounded-4 border bg-light">
+                    <div class="p-4 p-md-5 rounded-4 border bg-light h-100">
                         <h4 class="fw-bold mb-4">The Values We Live By</h4>
                         <div class="mb-4 d-flex">
                             <i class="fas fa-fingerprint text-primary fs-3 me-3 mt-1"></i>
                             <div>
                                 <h6 class="fw-bold mb-1">Uncompromising Accuracy</h6>
-                                <p class="small text-muted mb-0">Every decimal point matters. We eliminate the "human error" through automated validation.</p>
+                                <p class="small text-muted mb-0">Every decimal point matters. We reduce risk through automated validation and professional oversight.</p>
                             </div>
                         </div>
                         <div class="mb-4 d-flex">
@@ -258,7 +261,7 @@
                             <i class="fas fa-rocket text-primary fs-3 me-3 mt-1"></i>
                             <div>
                                 <h6 class="fw-bold mb-1">Innovation-First</h6>
-                                <p class="small text-muted mb-0">We leverage cloud accounting and Daraja API integrations to give you real-time data access.</p>
+                                <p class="small text-muted mb-0">We leverage cloud accounting to give you real-time data access from anywhere in Kenya.</p>
                             </div>
                         </div>
                     </div>
@@ -273,21 +276,21 @@
                     <div class="method-item">
                         <span class="method-number">01</span>
                         <h5 class="fw-bold">Analysis</h5>
-                        <p class="small text-muted">We audit your current financial health and identify ICT integration points.</p>
+                        <p class="small text-muted">We audit your current health and identify ICT integration points.</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="method-item">
                         <span class="method-number">02</span>
                         <h5 class="fw-bold">Integration</h5>
-                        <p class="small text-muted">Deploying cloud-based bookkeeping tools tailored to your industry.</p>
+                        <p class="small text-muted">Deploying cloud bookkeeping tools tailored to your industry.</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
                     <div class="method-item">
                         <span class="method-number">03</span>
                         <h5 class="fw-bold">Execution</h5>
-                        <p class="small text-muted">Regular filing, payroll management, and real-time financial reporting.</p>
+                        <p class="small text-muted">Regular filing, payroll, and real-time financial reporting.</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
@@ -309,17 +312,6 @@
                 <h2 class="fw-bold mb-4">Empowering the Next Generation</h2>
                 <p class="text-muted fs-5">We believe financial literacy is the backbone of a strong economy. DK Account Firm proudly hosts mentorship programs for ICT and accounting students in Meru, helping bridge the skill gap in technical financial management.</p>
                 <a href="contact.html" class="btn btn-primary btn-lg rounded-3 px-4 mt-3">Partner With Us</a>
-            </div>
-        </div>
-
-        <div class="py-5 border-top border-bottom text-center">
-            <p class="text-uppercase fw-bold text-muted small mb-4" style="letter-spacing: 3px;">Our Technical Ecosystem</p>
-            <div class="d-flex flex-wrap justify-content-center gap-5 tech-stack-strip fw-black">
-                <span>QUICKBOOKS</span>
-                <span>XERO</span>
-                <span>KRA iTAX</span>
-                <span>SAGE</span>
-                <span>M-PESA DARAJA</span>
             </div>
         </div>
     </main>
@@ -362,7 +354,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/254110311712?text=Hello%20DK%20Account%20Firm,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/254110311712" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
