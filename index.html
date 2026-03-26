@@ -43,19 +43,40 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: var(--dark-charcoal);
+            overflow-x: hidden; /* Prevent horizontal scroll on Android */
         }
 
-        /* Navigation */
+        /* Navigation - Fixed for Android Consistency */
         .navbar {
             background-color: var(--sky-blue) !important;
-            padding: 1rem 2rem;
-            border-bottom: none;
+            padding: 0.8rem 0;
+            z-index: 1050; /* Stay above hero and cards */
+            width: 100%;
         }
 
-        .navbar-brand, .nav-link {
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 800 !important; /* Matches bold preference */
+            font-size: 1.25rem;
+            margin-right: 0;
+        }
+
+        .nav-link {
             color: #ffffff !important;
             font-weight: 600;
             margin: 0 15px;
+        }
+
+        /* Mobile Menu Fixes */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--sky-blue);
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .btn-sky { width: 100%; text-align: center; margin-top: 10px; }
         }
 
         .navbar-toggler { border-color: rgba(255, 255, 255, 0.5); }
@@ -77,13 +98,15 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section - Pivot to National */
+        /* Hero Section - Fixed Image for Android */
         .hero {
-            padding: 80px 0 150px 0;
+            padding: 60px 0 120px 0;
             background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
                         url('logo1.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Android compatibility fix */
         }
 
         .owner-img {
@@ -180,7 +203,9 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">DK <span style="color: #ffffff">ACCOUNT FIRM</span></a>
+            <a class="navbar-brand text-nowrap" href="index.html">
+                DK <span style="color: #ffffff">ACCOUNT FIRM</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -202,7 +227,7 @@
                 <div class="col-lg-7 text-start">
                     <h1 class="display-3 fw-bold mb-4">Precision & Strategy.<br><span style="color: var(--sky-blue)">National Reach, Local Integrity.</span></h1>
                     <p class="lead mb-5 text-muted">Certified Public Accountants providing world-class financial solutions for Kenya's dynamic business landscape.</p>
-                    <a href="#contact.html" class="btn btn-primary btn-lg px-5" style="background-color: var(--sky-blue); border: none; font-weight: 700;">Free Consultation</a>
+                    <a href="contact.html" class="btn btn-primary btn-lg px-5" style="background-color: var(--sky-blue); border: none; font-weight: 700;">Free Consultation</a>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block text-center">
                     <img src="dan.png" alt="Firm Principal" class="img-fluid owner-img">
@@ -301,31 +326,6 @@
                         <div class="col-md-6">
                             <div class="service-list-item"><i class="fas fa-chart-pie"></i> <span class="fw-bold">Budgeting & Forecasting</span></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-white">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <h2 class="fw-bold">Financial <span style="color: var(--sky-blue)">Insights</span></h2>
-                <a href="#" class="text-decoration-none fw-bold" style="color: var(--sky-blue)">All Articles →</a>
-            </div>
-            <div class="row g-4 text-start">
-                <div class="col-md-6">
-                    <div class="p-4 rounded-3 shadow-sm border h-100">
-                        <span class="badge mb-2" style="background: var(--light-sky-blue); color: var(--sky-blue)">Tax Update</span>
-                        <h4 class="fw-bold">Navigating the Finance Act 2026</h4>
-                        <p class="text-muted">A comprehensive guide for Kenyan businesses on the latest statutory changes and their impact.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="p-4 rounded-3 shadow-sm border h-100">
-                        <span class="badge mb-2" style="background: var(--light-sky-blue); color: var(--sky-blue)">Tech</span>
-                        <h4 class="fw-bold">Automating KRA Returns with ICT</h4>
-                        <p class="text-muted">How digital integration is reducing errors and saving time for modern Kenyan firms.</p>
                     </div>
                 </div>
             </div>
