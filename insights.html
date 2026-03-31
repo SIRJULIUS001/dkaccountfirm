@@ -24,7 +24,7 @@
       "publisher": {
         "@type": "Organization",
         "name": "DK Account Firm",
-        "logo": "URL_TO_YOUR_LOGO"
+        "logo": "https://www.dkaccount.com/logo.png"
       }
     }
     </script>
@@ -41,15 +41,13 @@
             --accent-gold: #f59e0b;
         }
 
-        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
         .navbar { background-color: var(--sky-blue) !important; padding: 1rem 2rem; }
         .navbar-brand, .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 15px; }
-        .btn-sky { background-color: transparent; border: 2px solid #ffffff; color: #ffffff !important; border-radius: 5px; }
-
-        /* Insights Header */
-        .insights-header { background: var(--light-sky-blue); padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
+        .btn-sky { background-color: transparent; border: 2px solid #ffffff; color: #ffffff !important; border-radius: 5px; transition: 0.3s; }
+        .btn-sky:hover { background: #fff; color: var(--sky-blue) !important; }
 
         /* Market Pulse Ticker */
         .market-pulse {
@@ -62,12 +60,15 @@
         }
         .ticker-content {
             display: inline-block;
-            animation: ticker 30s linear infinite;
+            animation: ticker 35s linear infinite;
         }
         @keyframes ticker {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+
+        /* Insights Header */
+        .insights-header { background: var(--light-sky-blue); padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
 
         /* Filter Pills */
         .filter-pill {
@@ -80,7 +81,7 @@
             font-weight: 600;
             transition: 0.3s;
             display: inline-block;
-            margin-bottom: 10px;
+            margin: 0 5px 10px 0;
         }
         .filter-pill.active, .filter-pill:hover { background: var(--sky-blue); color: #fff; }
 
@@ -98,42 +99,15 @@
         }
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(14, 165, 233, 0.1); }
         
-        /* Professional Image Container */
         .article-img-container { 
-            height: 220px; 
+            height: 250px; 
             overflow: hidden;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
         }
-        .article-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .article-card:hover .article-img-container img {
-            transform: scale(1.05);
-        }
-
-        .article-card .p-4 {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .article-card a { margin-top: auto; }
-        
-        /* News Sidebar Styling */
-        .news-link { transition: color 0.2s ease-in-out; font-size: 0.9rem; line-height: 1.4; display: block; }
-        .news-link:hover { color: var(--sky-blue) !important; }
-        .news-item:last-child { border-bottom: none !important; }
+        .article-img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .article-card:hover .article-img-container img { transform: scale(1.05); }
 
         /* Resource Section */
-        #toolbox {
-            clear: both !important; 
-            padding-top: 60px;
-            background: #fff;
-        }
-
         .resource-card {
             background: #fff;
             border-top: 4px solid var(--sky-blue);
@@ -141,26 +115,26 @@
         }
         .resource-card:hover { border-top-color: var(--dark-charcoal); }
 
-        /* Compliance Calendar Items */
+        /* Deadline Items */
         .deadline-item {
             font-size: 0.85rem;
-            padding: 8px;
-            margin-bottom: 8px;
-            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .deadline-urgent { background: #fff5f5; border-left: 3px solid #dc3545; }
-        .deadline-upcoming { background: #f0f9ff; border-left: 3px solid var(--sky-blue); }
+        .deadline-urgent { background: #fff5f5; border-left: 4px solid #dc3545; }
+        .deadline-upcoming { background: #f0f9ff; border-left: 4px solid var(--sky-blue); }
 
-        /* Newsletter Section */
+        /* Newsletter */
         .newsletter-box {
             background: var(--sky-blue);
             color: #fff;
-            border-radius: 15px;
-            padding: 50px;
-            margin-top: 60px;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 80px;
         }
 
         /* Floating WhatsApp */
@@ -175,15 +149,13 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
             z-index: 1000;
             transition: 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
 
-        footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
-        .footer-logo { font-weight: bold; font-size: 1.5rem; }
-        .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
+        footer { background-color: var(--sky-blue); color: #ffffff; padding: 60px 0 20px 0; }
     </style>
 </head>
 <body>
@@ -191,9 +163,9 @@
     <div class="market-pulse">
         <div class="ticker-content">
             <span class="mx-4"><i class="fas fa-chart-line text-info me-2"></i> KES to USD: 129.50</span>
-            <span class="mx-4"><i class="fas fa-exclamation-circle text-warning me-2"></i> KRA Deadline: PAYE due in 8 days</span>
-            <span class="mx-4"><i class="fas fa-lightbulb text-success me-2"></i> Pro Tip: Reconcile M-Pesa daily to avoid audit gaps</span>
-            <span class="mx-4"><i class="fas fa-city text-info me-2"></i> Meru Trade Permits: New renewals open for 2026</span>
+            <span class="mx-4"><i class="fas fa-calendar-alt text-warning me-2"></i> KRA Deadline: IT2P Due in 12 days</span>
+            <span class="mx-4"><i class="fas fa-microchip text-success me-2"></i> Tech Tip: Use M-Pesa B2B API for automated vendor payments</span>
+            <span class="mx-4"><i class="fas fa-landmark text-info me-2"></i> Meru County: Business Permit 2026 renewals now active</span>
         </div>
     </div>
 
@@ -215,26 +187,26 @@
         </div>
     </nav>
 
-    <header class="insights-header" role="banner">
+    <header class="insights-header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="display-4 fw-bold">Financial <span style="color: var(--sky-blue)">Intelligence</span></h1>
-                    <p class="lead text-muted">Stay compliant and profitable with professional insights tailored for the Kenyan market.</p>
+                    <h1 class="display-4 fw-bold">Strategy & <span style="color: var(--sky-blue)">Insights</span></h1>
+                    <p class="lead text-muted">Precision accounting and tech-driven financial advisory for the Kenyan market.</p>
                 </div>
                 <div class="col-lg-5">
-                    <form action="#" method="get" class="input-group shadow-sm">
-                        <input type="text" class="form-control p-3 border-0" placeholder="Search insights..." aria-label="Search insights">
+                    <div class="input-group shadow-sm">
+                        <input type="text" class="form-control p-3 border-0" placeholder="Search KRA updates, IFRS, ICT...">
                         <button class="btn btn-primary px-4" style="background: var(--sky-blue); border: none;"><i class="fas fa-search"></i></button>
-                    </form>
+                    </div>
                 </div>
             </div>
-            <nav class="mt-4" aria-label="Article categories">
+            <nav class="mt-4">
                 <a href="#" class="filter-pill active">All Topics</a>
-                <a href="#" class="filter-pill">Taxation (KRA)</a>
-                <a href="#" class="filter-pill">Audit & Assurance</a>
-                <a href="#" class="filter-pill">ICT & Fintech</a>
-                <a href="#" class="filter-pill">Business Strategy</a>
+                <a href="#" class="filter-pill">KRA Taxation</a>
+                <a href="#" class="filter-pill">Fintech & API</a>
+                <a href="#" class="filter-pill">Meru Business</a>
+                <a href="#" class="filter-pill">Audit Strategy</a>
             </nav>
         </div>
     </header>
@@ -242,38 +214,36 @@
     <main class="container py-5">
         <div class="row g-4">
             <div class="col-lg-8">
-                <article class="article-card mb-5 border shadow-sm">
+                <article class="article-card mb-5 border">
                     <div class="article-img-container">
-                        <img src="https://images.unsplash.com/photo-1454165833767-0266b196773f?auto=format&fit=crop&w=1200&q=80" alt="Tax Compliance Guide">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="Finance Act 2026 Analysis">
                     </div>
                     <div class="p-4">
-                        <header>
-                            <span class="badge mb-2" style="background: var(--light-sky-blue); color: var(--sky-blue)">Finance Act 2026</span>
-                            <h2 class="fw-bold h1">The Ultimate Guide to Tax Compliance in Kenya</h2>
-                        </header>
-                        <p class="text-muted">As business landscapes shift, staying ahead of KRA regulations is vital. We break down the newest amendments affecting Kenyan SMEs and international investors.</p>
-                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--sky-blue)">Read Full Case Study →</a>
+                        <span class="badge mb-2" style="background: var(--light-sky-blue); color: var(--sky-blue)">Compliance 2026</span>
+                        <h2 class="fw-bold">The Impact of the 2026 Finance Act on Kenyan SMEs</h2>
+                        <p class="text-muted">An in-depth analysis of the new tax brackets and digital service tax amendments that every business owner in Meru and beyond needs to understand.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--sky-blue)">Read Full Breakdown →</a>
                     </div>
                 </article>
 
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <article class="article-card border shadow-sm">
+                        <article class="article-card border">
                             <div class="p-4">
-                                <span class="text-muted small">March 15, 2026</span>
-                                <h3 class="h5 fw-bold mt-2">Automating Your Payroll with ICT Solutions</h3>
-                                <p class="small text-muted">Saving 20+ hours a month using automated M-Pesa API reconciliation for secure disbursements.</p>
-                                <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">View Article</a>
+                                <span class="text-muted small">March 28, 2026</span>
+                                <h4 class="h5 fw-bold mt-2">Integrating M-Pesa API with Django Systems</h4>
+                                <p class="small text-muted">A technical guide on automating reconciliation for medical procurement and retail platforms.</p>
+                                <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">Read Article</a>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-6">
-                        <article class="article-card border shadow-sm">
+                        <article class="article-card border">
                             <div class="p-4">
-                                <span class="text-muted small">March 10, 2026</span>
-                                <h3 class="h5 fw-bold mt-2">IFRS Updates for Meru Agricultural Exports</h3>
-                                <p class="small text-muted">New reporting standards for the horticultural and coffee export sectors in Meru County.</p>
-                                <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">View Article</a>
+                                <span class="text-muted small">March 20, 2026</span>
+                                <h4 class="h5 fw-bold mt-2">Agricultural Export Audit Standards</h4>
+                                <p class="small text-muted">Preparing for IFRS S1 and S2 disclosures for Meru-based coffee and tea exporters.</p>
+                                <a href="#" class="text-decoration-none fw-bold small" style="color: var(--sky-blue)">Read Article</a>
                             </div>
                         </article>
                     </div>
@@ -284,52 +254,45 @@
                 <div class="p-4 rounded-3 border bg-white mb-4 shadow-sm" style="border-left: 5px solid #dc3545 !important;">
                     <div class="d-flex align-items-center mb-3">
                         <div class="spinner-grow spinner-grow-sm text-danger me-2" role="status"></div>
-                        <h5 class="fw-bold mb-0">Live Kenya Business News</h5>
+                        <h5 class="fw-bold mb-0">Live Finance Feed</h5>
                     </div>
                     <div id="kenya-news-container">
-                        <p class="small text-muted italic">Analyzing latest financial shifts...</p>
+                        <p class="small text-muted italic">Polling financial news sources...</p>
                     </div>
-                    <hr>
-                    <small class="text-muted" style="font-size: 0.7rem;">Powered by DK AI Integrated Feed</small>
                 </div>
 
-                <div class="p-4 rounded-3 text-white text-center shadow-sm" style="background: var(--dark-charcoal)">
-                    <h5 class="fw-bold">Audit-Ready?</h5>
-                    <p class="small">Check the latest 'Business Compliance 2026' official notices from KRA.</p>
-                    <a href="https://www.kra.go.ke/en/media-center/notices" target="_blank" class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">View Official Notices</a>
+                <div class="p-4 rounded-3 text-white shadow-sm" style="background: var(--dark-charcoal)">
+                    <h5 class="fw-bold">Audit Readiness</h5>
+                    <p class="small">Ensure your records are 2026-compliant. Access official KRA public notices below.</p>
+                    <a href="https://www.kra.go.ke" target="_blank" class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">KRA Portal</a>
                 </div>
             </aside>
         </div>
 
         <section id="toolbox" class="py-5 border-top mt-5">
-            <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Interactive Resources</span></h2>
+            <h2 class="fw-bold mb-4">Financial <span style="color: var(--sky-blue)">Toolbox</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border">
-                        <h4 class="h5 fw-bold text-center"><i class="fas fa-calculator mb-3 fs-3 text-primary d-block"></i>Quick Calculator</h4>
-                        <div class="mb-2">
-                            <input type="number" id="calcAmount" class="form-control form-control-sm" placeholder="Amount (KES)">
-                        </div>
+                        <h4 class="h5 fw-bold text-center"><i class="fas fa-calculator mb-3 fs-3 text-primary d-block"></i>Quick Tax Calc</h4>
+                        <input type="number" id="calcAmount" class="form-control mb-2" placeholder="Amount (KES)">
                         <div class="d-flex gap-1 mb-2">
-                            <button onclick="calculateVAT(0.16)" class="btn btn-xs btn-outline-primary w-100" style="font-size:0.7rem;">16% VAT</button>
-                            <button onclick="calculateMpesa()" class="btn btn-xs btn-dark w-100" style="font-size:0.7rem;">M-Pesa Fee</button>
+                            <button onclick="calculateVAT(0.16)" class="btn btn-sm btn-outline-primary w-100">16% VAT</button>
+                            <button onclick="calculateMpesa()" class="btn btn-sm btn-dark w-100">M-Pesa Fee</button>
                         </div>
-                        <div id="calcResult" class="small p-2 bg-light rounded text-center fw-bold" style="display:none; color: var(--sky-blue);"></div>
+                        <div id="calcResult" class="small p-2 bg-light rounded text-center fw-bold mt-2" style="display:none; color: var(--sky-blue);"></div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card h-100 border" id="compliance-calendar">
+                    <div class="p-4 shadow-sm rounded resource-card h-100 border">
                         <h4 class="h5 fw-bold text-center"><i class="fas fa-calendar-check mb-3 fs-3 text-success d-block"></i>Deadline Tracker</h4>
-                        <div id="deadline-list" class="mt-3"></div>
-                        <div class="mt-3 pt-2 border-top">
-                            <button onclick="generateCalendar()" class="btn btn-sm btn-outline-primary w-100">Refresh Tracker</button>
-                        </div>
+                        <div id="deadline-list"></div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border" id="quizContainer">
-                        <h4 class="h5 fw-bold text-center"><i class="fas fa-heartbeat mb-3 fs-3 text-danger d-block"></i>KRA Health Check</h4>
-                        <p class="small text-muted text-center" id="quizQuestion">Are your ETR/TIMS sales reconciled with iTax?</p>
+                        <h4 class="h5 fw-bold text-center"><i class="fas fa-stethoscope mb-3 fs-3 text-danger d-block"></i>KRA Health Check</h4>
+                        <p class="small text-muted text-center" id="quizQuestion">Are your ETR logs reconciled with iTax?</p>
                         <div class="d-flex gap-2">
                             <button onclick="nextQuestion(true)" class="btn btn-sm btn-success w-100">Yes</button>
                             <button onclick="nextQuestion(false)" class="btn btn-sm btn-outline-danger w-100">No</button>
@@ -339,41 +302,14 @@
             </div>
         </section>
 
-        <section class="row g-4 mt-5">
-            <div class="col-lg-8">
-                <div class="p-4 rounded-4 bg-dark text-white h-100 shadow-sm">
-                    <h4 class="fw-bold"><i class="fas fa-shield-alt me-2 text-info"></i>Secure Client File Drop</h4>
-                    <p class="small text-muted">Upload bank statements or P9 forms securely (Max 10MB).</p>
-                    
-                    <form action="https://formspree.io/f/xeeryqga" method="POST" enctype="multipart/form-data" class="mt-3">
-                        <div class="input-group input-group-sm mb-2">
-                            <input type="file" name="client_file" class="form-control bg-dark text-white border-secondary" required>
-                            <button class="btn btn-sky" type="submit">
-                                <i class="fas fa-cloud-upload-alt me-1"></i> Upload
-                            </button>
-                        </div>
-                        <input type="hidden" name="_subject" value="New Secure File Upload - DK Account Firm">
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="p-4 rounded-4 border bg-white h-100 shadow-sm">
-                    <h5 class="fw-bold text-primary">Meru Business Spotlight</h5>
-                    <p class="small text-muted mb-0">Direct local updates on Meru County trade permits and agricultural incentives.</p>
-                </div>
-            </div>
-        </section>
-
         <section class="newsletter-box text-center shadow">
-            <h2 class="fw-bold mb-3">Subscribe to Strategy Updates</h2>
-            <p class="mb-4">Weekly tax precision and ICT strategy updates for Kenyan enterprises.</p>
+            <h2 class="fw-bold mb-3">Join the Strategy Circle</h2>
+            <p class="mb-4">Get weekly tax briefs and ICT strategy direct to your inbox.</p>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="https://formspree.io/f/xeeryqga" method="POST" class="input-group">
-                        <input type="email" name="email" class="form-control p-3" placeholder="yourname@email.com" required>
-                        <input type="hidden" name="_subject" value="New Newsletter Subscription">
-                        <input type="hidden" name="_next" value="https://www.dkaccount.com/insights.html">
-                        <button type="submit" class="btn btn-dark px-4 fw-bold">Join Now</button>
+                        <input type="email" name="email" class="form-control p-3" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-dark px-4 fw-bold">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -385,40 +321,26 @@
     </a>
 
     <footer>
-        <div class="container">
-            <div class="row">
+        <div class="container text-center">
+            <div class="row text-start">
                 <div class="col-lg-4 mb-4">
-                    <div class="footer-logo">DK ACCOUNT FIRM</div>
-                    <div class="sky-line"></div>
-                    <p>Professional auditing, taxation, and ICT consultancy across Kenya. Headquartered in Meru Town.</p>
+                    <h5 class="fw-bold">DK ACCOUNT FIRM</h5>
+                    <p class="small text-white-50">Professional auditing, taxation, and ICT consultancy. Headquartered in Meru, serving Kenya.</p>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li>Bookkeeping</li>
-                        <li>Payroll</li>
-                        <li>Tax Filing</li>
-                        <li>Audit</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5 class="fw-bold">Certifications</h5>
-                    <div class="d-flex gap-2 mt-3">
-                        <span class="badge border border-white">CPA(K)</span>
-                        <span class="badge border border-white">ICPAK</span>
-                        <span class="badge border border-white">KRA</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4">
+                <div class="col-lg-4 mb-4">
                     <h5 class="fw-bold">Contact</h5>
-                    <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
-                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                    <p class="small mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
+                    <p class="small"><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold">Accreditations</h5>
+                    <span class="badge border border-white">CPA(K)</span>
+                    <span class="badge border border-white">ICPAK</span>
+                    <span class="badge border border-white">KRA</span>
                 </div>
             </div>
-            <hr>
-            <div class="text-center py-3">
-                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
-            </div>
+            <hr class="bg-white">
+            <small>&copy; 2026 DK Account Firm. Built by Julls Digital.</small>
         </div>
     </footer>
 
@@ -426,105 +348,84 @@
     <script>
         const NEWS_API_KEY = 'pub_719047970875c759550304620021319084877';
 
-        async function fetchKenyaFinanceNews() {
+        async function fetchNews() {
             const container = document.getElementById('kenya-news-container');
-            const url = `https://newsdata.io/api/1/latest?apikey=${NEWS_API_KEY}&country=ke&category=business,technology&language=en`;
+            const url = `https://newsdata.io/api/1/latest?apikey=${NEWS_API_KEY}&country=ke&category=business&language=en`;
 
             try {
                 const response = await fetch(url);
                 const data = await response.json();
                 
-                if (data.status === "success" && data.results && data.results.length > 0) {
+                if (data.results && data.results.length > 0) {
                     container.innerHTML = '';
                     data.results.slice(0, 4).forEach(article => {
-                        const pubDate = article.pubDate ? new Date(article.pubDate).toLocaleDateString('en-KE', {day: '2-digit', month: 'short'}) : 'Latest';
-                        const newsItem = `
-                            <div class="news-item mb-3 pb-2 border-bottom">
-                                <div class="d-flex justify-content-between align-items-center mb-1">
-                                    <span class="badge bg-light text-primary border" style="font-size: 0.65rem;">${pubDate}</span>
-                                    <small class="text-muted" style="font-size: 0.6rem;">${article.source_id ? article.source_id.toUpperCase() : 'BUSINESS'}</small>
-                                </div>
-                                <h6 class="mb-1">
-                                    <a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">${article.title}</a>
+                        container.innerHTML += `
+                            <div class="mb-3 pb-2 border-bottom">
+                                <h6 class="small mb-1">
+                                    <a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold">${article.title}</a>
                                 </h6>
+                                <small class="text-muted" style="font-size:0.65rem">${new Date(article.pubDate).toLocaleDateString()}</small>
                             </div>`;
-                        container.insertAdjacentHTML('beforeend', newsItem);
                     });
                 } else {
-                    container.innerHTML = '<p class="small text-muted italic">No new alerts. Checking KRA portals...</p>';
+                    container.innerHTML = '<p class="small text-muted">No new alerts found.</p>';
                 }
             } catch (error) {
-                container.innerHTML = '<p class="small text-danger">Local feed temporarily offline.</p>';
+                container.innerHTML = '<p class="small text-danger">Feed offline.</p>';
             }
         }
 
-        function generateCalendar() {
-            const now = new Date();
-            const currentDay = now.getDate();
-            const container = document.getElementById('deadline-list');
-            
+        function generateDeadlines() {
+            const list = document.getElementById('deadline-list');
+            const day = new Date().getDate();
             const deadlines = [
-                { name: "PAYE / SHIF / NSSF", day: 9 },
-                { name: "VAT / MRI Returns", day: 20 },
-                { name: "Rent Income Tax", day: 20 }
+                { name: "PAYE/SHIF", due: 9 },
+                { name: "VAT/MRI", due: 20 }
             ];
-
-            container.innerHTML = '';
-
-            deadlines.forEach(item => {
-                let daysLeft = item.day - currentDay;
-                let statusClass = (daysLeft <= 3 && daysLeft >= 0) ? 'deadline-urgent' : 'deadline-upcoming';
-                let statusText = daysLeft < 0 ? "Next Month" : daysLeft === 0 ? "TODAY" : `${daysLeft} days left`;
-
-                const html = `
-                    <div class="deadline-item ${statusClass}">
-                        <div>
-                            <strong>${item.name}</strong><br>
-                            <small class="text-muted">Due: ${item.day}th</small>
-                        </div>
-                        <span class="badge ${ (daysLeft <= 3 && daysLeft >= 0) ? 'bg-danger' : 'bg-primary'}">${statusText}</span>
-                    </div>
-                `;
-                container.insertAdjacentHTML('beforeend', html);
-            });
+            
+            list.innerHTML = deadlines.map(d => {
+                const left = d.due - day;
+                const status = (left <= 3 && left >= 0) ? 'deadline-urgent' : 'deadline-upcoming';
+                return `
+                    <div class="deadline-item ${status}">
+                        <strong>${d.name}</strong>
+                        <span class="badge ${left <=3 ? 'bg-danger':'bg-primary'}">${left < 0 ? 'Next Mo' : left + ' days left'}</span>
+                    </div>`;
+            }).join('');
         }
 
         function calculateVAT(rate) {
-            const amtStr = document.getElementById('calcAmount').value;
+            const amt = parseFloat(document.getElementById('calcAmount').value);
             const res = document.getElementById('calcResult');
-            if(!amtStr) return;
-            
-            const amt = parseFloat(amtStr);
+            if(!amt) return;
             const vat = amt * rate;
             res.style.display = 'block';
-            res.innerHTML = `VAT: ${vat.toLocaleString()} | Total: ${(amt + vat).toLocaleString()}`;
+            res.innerText = `VAT: ${vat.toLocaleString()} | Total: ${(amt+vat).toLocaleString()}`;
         }
 
         function calculateMpesa() {
-            const amtStr = document.getElementById('calcAmount').value;
+            const amt = parseFloat(document.getElementById('calcAmount').value);
             const res = document.getElementById('calcResult');
-            if(!amtStr) return;
-            
-            const amt = parseFloat(amtStr);
-            let fee = amt <= 100 ? 0 : amt <= 500 ? 7 : amt <= 1000 ? 13 : 28; 
+            if(!amt) return;
+            let fee = amt <= 100 ? 0 : amt <= 1000 ? 13 : 28;
             res.style.display = 'block';
-            res.innerHTML = `Estimated Transfer Fee: KES ${fee}`;
+            res.innerText = `Est. M-Pesa Fee: KES ${fee}`;
         }
 
         let step = 0;
-        const qs = ["Are your ETR/TIMS sales reconciled?", "Do you have a valid Tax Certificate?", "Is your NSSF/NHIF up to date?", "Filed 2025 annual returns?"];
-        function nextQuestion(val) {
+        const questions = ["Valid Tax Certificate?", "Annual Returns filed?", "NHIF/SHIF updated?"];
+        function nextQuestion() {
             step++;
-            if(step < qs.length) {
-                document.getElementById('quizQuestion').innerText = qs[step];
+            if(step < questions.length) {
+                document.getElementById('quizQuestion').innerText = questions[step];
             } else {
-                document.getElementById('quizContainer').innerHTML = '<div class="text-center text-success"><i class="fas fa-check-circle fs-2"></i><p class="small mt-2">Compliance check complete.</p><a href="contact.html" class="btn btn-sm btn-primary">Book Consultation</a></div>';
+                document.getElementById('quizContainer').innerHTML = '<div class="text-center text-success"><i class="fas fa-check-circle fs-2"></i><p class="small mt-2">Analysis complete.</p></div>';
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            fetchKenyaFinanceNews();
-            generateCalendar();
+            fetchNews();
+            generateDeadlines();
         });
     </script>
 </body>
