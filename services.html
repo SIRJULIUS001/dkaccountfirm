@@ -29,17 +29,41 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Navigation - Synchronized with Index */
         .navbar {
             background-color: var(--sky-blue) !important;
-            padding: 1rem 2rem;
+            padding: 0.8rem 0;
+            z-index: 1050;
+            width: 100%;
         }
 
-        .navbar-brand, .nav-link {
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            font-size: 1.25rem;
+            margin-left: 15px;
+        }
+
+        .nav-link {
             color: #ffffff !important;
             font-weight: 600;
             margin: 0 15px;
         }
+
+        /* Mobile Menu Fixes */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--sky-blue);
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .btn-sky { width: 100%; text-align: center; margin-top: 10px; }
+        }
+
+        .navbar-toggler { border-color: rgba(255, 255, 255, 0.5); }
+        .navbar-toggler-icon { filter: brightness(0) invert(1); }
 
         .btn-sky {
             background-color: transparent;
@@ -150,12 +174,15 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">DK <span style="color: #ffffff">ACCOUNT FIRM</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="insights.html">Insights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
                     <li class="nav-item"><a class="btn btn-sky ms-lg-3" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -252,7 +279,7 @@
         </div>
     </main>
 
-    <footer data-aos="fade-up">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
