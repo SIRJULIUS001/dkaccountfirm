@@ -21,17 +21,34 @@
             --accent-gold: #f59e0b;
         }
 
-        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation - Rectified for horizontal alignment */
-        .navbar { background-color: var(--sky-blue) !important; padding: 0.8rem 2rem; }
-        .navbar-brand { color: #ffffff !important; font-weight: 700; margin-right: 2rem; }
-        .nav-link { color: #ffffff !important; font-weight: 600; padding: 0.5rem 1rem !important; }
-        .btn-sky { background-color: transparent; border: 2px solid #ffffff; color: #ffffff !important; border-radius: 5px; padding: 5px 15px; transition: 0.3s; }
+        /* Navigation - Synchronized with Index/Services */
+        .navbar { background-color: var(--sky-blue) !important; padding: 0.8rem 0; z-index: 1050; }
+        .navbar-brand { color: #ffffff !important; font-weight: 800 !important; font-size: 1.25rem; }
+        .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 10px; }
+        
+        .btn-sky { 
+            background-color: transparent; 
+            border: 2px solid #ffffff; 
+            color: #ffffff !important; 
+            border-radius: 5px; 
+            padding: 8px 25px; 
+            font-weight: 700;
+            transition: 0.3s; 
+        }
         .btn-sky:hover { background: #fff; color: var(--sky-blue) !important; }
 
-        /* Insights Header */
-        .insights-header { background: var(--light-sky-blue); padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--sky-blue);
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .btn-sky { width: 100%; text-align: center; margin-top: 10px; }
+        }
 
         /* Market Pulse Ticker */
         .market-pulse {
@@ -44,27 +61,15 @@
         }
         .ticker-content {
             display: inline-block;
-            animation: ticker 30s linear infinite;
+            animation: ticker 35s linear infinite;
         }
         @keyframes ticker {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
 
-        /* Filter Pills */
-        .filter-pill {
-            background: #fff;
-            border: 1px solid var(--sky-blue);
-            color: var(--sky-blue);
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .filter-pill.active, .filter-pill:hover { background: var(--sky-blue); color: #fff; }
+        /* Insights Header */
+        .insights-header { background: var(--light-sky-blue); padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
 
         /* Article Cards */
         .article-card {
@@ -74,50 +79,43 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             transition: 0.3s;
             background: #fff;
-            display: flex;
-            flex-direction: column;
             height: 100%; 
         }
-        .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(14, 165, 233, 0.1); }
+        .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15); }
         
         .article-img-container { 
-            height: 320px; 
+            height: 350px; 
             overflow: hidden;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
         }
         .article-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s ease;
         }
         .article-card:hover .article-img-container img { transform: scale(1.05); }
 
-        /* Sidebar News Updates */
-        .news-link { transition: color 0.2s ease-in-out; font-size: 0.9rem; line-height: 1.4; display: block; }
-        .news-link:hover { color: var(--sky-blue) !important; }
-
         /* Resource Section */
-        #toolbox { clear: both !important; padding-top: 60px; background: #fff; }
+        #toolbox { padding-top: 60px; background: #fff; }
         .resource-card { background: #fff; border-top: 4px solid var(--sky-blue); transition: 0.3s; }
 
-        /* Compliance Calendar Items */
-        .deadline-item { font-size: 0.85rem; padding: 8px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
-        .deadline-upcoming { background: #f0f9ff; border-left: 3px solid var(--sky-blue); }
+        /* Compliance Calendar */
+        .deadline-item { font-size: 0.85rem; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .deadline-upcoming { background: #f0f9ff; border-left: 4px solid var(--sky-blue); }
 
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366;
-            color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999;
-            z-index: 1000; transition: 0.3s;
+            color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
 
         /* Footer Styling */
         footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
-        .footer-logo { font-weight: bold; font-size: 1.5rem; }
-        .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
+        .footer-logo { font-weight: 800; font-size: 1.5rem; }
+        .sky-line { height: 3px; width: 40px; background: #ffffff; margin: 10px 0 20px 0; opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -126,15 +124,16 @@
         <div class="ticker-content">
             <span class="mx-4"><i class="fas fa-chart-line text-info me-2"></i> KES to USD: 129.50</span>
             <span class="mx-4"><i class="fas fa-exclamation-circle text-warning me-2"></i> KRA Deadline: PAYE due in 8 days</span>
-            <span class="mx-4"><i class="fas fa-city text-info me-2"></i> Meru Trade Permits: New renewals open for 2026</span>
+            <span class="mx-4"><i class="fas fa-city text-info me-2"></i> Meru Trade Permits: 2026 Renewals Open</span>
+            <span class="mx-4"><i class="fas fa-file-invoice text-success me-2"></i> iTax Portal: System Stability High</span>
         </div>
     </div>
 
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">DK ACCOUNT FIRM</a>
+            <a class="navbar-brand fw-bold" href="index.html">DK <span style="color: #ffffff">ACCOUNT FIRM</span></a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+                <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
@@ -148,8 +147,8 @@
         </div>
     </nav>
 
-    <header class="insights-header">
-        <div class="container text-center">
+    <header class="insights-header text-center">
+        <div class="container">
             <h1 class="display-4 fw-bold">Financial <span style="color: var(--sky-blue)">Intelligence</span></h1>
             <p class="lead text-muted">Stay compliant and profitable with professional insights tailored for the Kenyan market.</p>
         </div>
@@ -158,14 +157,14 @@
     <main class="container py-5">
         <div class="row g-4">
             <div class="col-lg-8">
-                <article class="article-card mb-5 border shadow-sm">
+                <article class="article-card mb-4 border shadow-sm">
                     <div class="article-img-container">
                         <img src="https://images.unsplash.com/photo-1454165833767-0266b196773f?auto=format&fit=crop&w=1200&q=80" alt="Tax Compliance Guide">
                     </div>
                     <div class="p-4">
                         <span class="badge mb-2" style="background: var(--light-sky-blue); color: var(--sky-blue)">Finance Act 2026</span>
-                        <h2 class="fw-bold h1">The Ultimate Guide to Tax Compliance in Kenya</h2>
-                        <p class="text-muted">Breaking down the newest amendments affecting Kenyan SMEs and international investors.</p>
+                        <h2 class="fw-bold">The Ultimate Guide to Tax Compliance in Kenya</h2>
+                        <p class="text-muted">Breaking down the newest amendments affecting Kenyan SMEs and international investors. Learn how to optimize your returns while staying within the legal framework of the latest Finance Act.</p>
                         <a href="#" class="text-decoration-none fw-bold" style="color: var(--sky-blue)">Read Full Case Study →</a>
                     </div>
                 </article>
@@ -175,7 +174,7 @@
                 <div class="p-4 rounded-3 border bg-white mb-4 shadow-sm" style="border-left: 5px solid #dc3545 !important;">
                     <div class="d-flex align-items-center mb-3">
                         <div class="spinner-grow spinner-grow-sm text-danger me-2" role="status"></div>
-                        <h5 class="fw-bold mb-0">Live Kenya Business News</h5>
+                        <h5 class="fw-bold mb-0">Live Business News</h5>
                     </div>
                     <div id="kenya-news-container">
                         <p class="small text-muted italic">Analyzing latest financial shifts...</p>
@@ -186,7 +185,7 @@
 
                 <div class="p-4 rounded-3 text-white text-center shadow-sm" style="background: var(--dark-charcoal)">
                     <h5 class="fw-bold">Audit-Ready?</h5>
-                    <p class="small">Check the latest 'Business Compliance 2026' official notices from KRA.</p>
+                    <p class="small opacity-75">Check the latest 'Business Compliance 2026' official notices from KRA.</p>
                     <a href="https://www.kra.go.ke/en/media-center/notices" target="_blank" class="btn btn-primary btn-sm w-100" style="background: var(--sky-blue); border: none;">View Official Notices</a>
                 </div>
             </aside>
@@ -194,28 +193,33 @@
 
         <section id="toolbox" class="py-5 border-top mt-5">
             <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Resources</span></h2>
-            <div class="row g-4">
+            <div class="row g-4 text-center">
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border">
-                        <h4 class="h5 fw-bold text-center"><i class="fas fa-calculator mb-3 fs-3 text-primary d-block"></i>Quick Calculator</h4>
+                        <i class="fas fa-calculator mb-3 fs-3 text-primary"></i>
+                        <h4 class="h5 fw-bold">Quick Calculator</h4>
                         <input type="number" id="calcAmount" class="form-control form-control-sm mb-2" placeholder="Amount (KES)">
                         <div class="d-flex gap-1 mb-2">
-                            <button onclick="calculateVAT(0.16)" class="btn btn-xs btn-outline-primary w-100" style="font-size:0.7rem;">16% VAT</button>
-                            <button onclick="calculateMpesa()" class="btn btn-xs btn-dark w-100" style="font-size:0.7rem;">M-Pesa Fee</button>
+                            <button onclick="calculateVAT(0.16)" class="btn btn-outline-primary btn-sm w-100">16% VAT</button>
+                            <button onclick="calculateMpesa()" class="btn btn-dark btn-sm w-100">M-Pesa Fee</button>
                         </div>
-                        <div id="calcResult" class="small p-2 bg-light rounded text-center fw-bold" style="display:none; color: var(--sky-blue);"></div>
+                        <div id="calcResult" class="small p-2 bg-light rounded fw-bold" style="display:none; color: var(--sky-blue);"></div>
                     </div>
                 </div>
+                
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card h-100 border" id="compliance-calendar">
-                        <h4 class="h5 fw-bold text-center"><i class="fas fa-calendar-check mb-3 fs-3 text-success d-block"></i>Deadline Tracker</h4>
-                        <div id="deadline-list"></div>
+                    <div class="p-4 shadow-sm rounded resource-card h-100 border">
+                        <i class="fas fa-calendar-check mb-3 fs-3 text-success"></i>
+                        <h4 class="h5 fw-bold">Deadline Tracker</h4>
+                        <div id="deadline-list" class="text-start"></div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border" id="quizContainer">
-                        <h4 class="h5 fw-bold text-center"><i class="fas fa-heartbeat mb-3 fs-3 text-danger d-block"></i>KRA Health Check</h4>
-                        <p class="small text-muted text-center" id="quizQuestion">Are your ETR/TIMS sales reconciled?</p>
+                        <i class="fas fa-heartbeat mb-3 fs-3 text-danger"></i>
+                        <h4 class="h5 fw-bold">KRA Health Check</h4>
+                        <p class="small text-muted" id="quizQuestion">Are your ETR/TIMS sales reconciled?</p>
                         <div class="d-flex gap-2">
                             <button onclick="nextQuestion(true)" class="btn btn-sm btn-success w-100">Yes</button>
                             <button onclick="nextQuestion(false)" class="btn btn-sm btn-outline-danger w-100">No</button>
@@ -226,7 +230,9 @@
         </section>
     </main>
 
-    <a href="https://wa.me/254110311712" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp" style="margin-top:16px;"></i></a>
+    <a href="https://wa.me/254110311712" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer>
         <div class="container">
@@ -234,11 +240,11 @@
                 <div class="col-lg-4 mb-4">
                     <div class="footer-logo">DK ACCOUNT FIRM</div>
                     <div class="sky-line"></div>
-                    <p>Professional auditing, taxation, and ICT consultancy across Kenya. Headquartered in Meru Town.</p>
+                    <p class="opacity-75">Professional auditing, taxation, and ICT consultancy across Kenya. Headquartered in Meru Town.</p>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled opacity-75">
                         <li>Bookkeeping</li><li>Payroll</li><li>Tax Filing</li><li>Audit</li>
                     </ul>
                 </div>
@@ -256,9 +262,9 @@
                     <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
                 </div>
             </div>
-            <hr>
+            <hr class="opacity-25">
             <div class="text-center py-3">
-                <small>&copy; 2026 DK Account Firm. All Rights Reserved.</small>
+                <small class="opacity-75">&copy; 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
@@ -277,12 +283,12 @@
                     container.innerHTML = '';
                     data.results.slice(0, 4).forEach(article => {
                         container.insertAdjacentHTML('beforeend', `
-                            <div class="news-item mb-3 pb-2 border-bottom">
-                                <h6 class="mb-1"><a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold news-link">${article.title}</a></h6>
+                            <div class="mb-3 pb-2 border-bottom">
+                                <h6 class="mb-1 small"><a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold">${article.title}</a></h6>
                             </div>`);
                     });
                 }
-            } catch (e) { container.innerHTML = '<p class="small text-danger">Feed offline.</p>'; }
+            } catch (e) { container.innerHTML = '<p class="small text-danger">News feed currently offline.</p>'; }
         }
 
         function generateCalendar() {
@@ -305,6 +311,7 @@
 
         function calculateMpesa() {
             const amt = parseFloat(document.getElementById('calcAmount').value);
+            if(!amt) return;
             const res = document.getElementById('calcResult');
             let fee = amt <= 1000 ? 13 : 28;
             res.style.display = 'block';
@@ -316,7 +323,7 @@
             const qs = ["Tax Certificate valid?", "NSSF up to date?", "Returns filed?"];
             step++;
             if(step < qs.length) { document.getElementById('quizQuestion').innerText = qs[step]; }
-            else { document.getElementById('quizContainer').innerHTML = '<p class="text-success text-center">Check complete!</p>'; }
+            else { document.getElementById('quizContainer').innerHTML = '<div class="text-center"><i class="fas fa-check-circle text-success fs-1 mb-2"></i><p class="text-success fw-bold">Health Check Complete!</p></div>'; }
         }
 
         document.addEventListener('DOMContentLoaded', () => { fetchKenyaFinanceNews(); generateCalendar(); });
