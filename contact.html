@@ -25,79 +25,91 @@
             --whatsapp-green: #25D366;
         }
 
-        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); }
+        body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); overflow-x: hidden; }
 
-        /* Navigation */
-        .navbar { background-color: var(--sky-blue) !important; padding: 1rem 2rem; }
-        .navbar-brand, .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 15px; }
-
-        .btn-sky-outline {
-            background-color: transparent;
-            border: 2px solid #ffffff;
-            color: #ffffff !important;
+        /* Navigation - Synchronized with site-wide theme */
+        .navbar { background-color: var(--sky-blue) !important; padding: 0.8rem 0; z-index: 1050; }
+        .navbar-brand { color: #ffffff !important; font-weight: 800 !important; font-size: 1.25rem; }
+        .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 10px; }
+        
+        .btn-sky-outline { 
+            background-color: transparent; 
+            border: 2px solid #ffffff; 
+            color: #ffffff !important; 
+            border-radius: 5px; 
+            padding: 8px 25px; 
             font-weight: 700;
-            padding: 8px 25px;
-            border-radius: 5px;
-            transition: all 0.3s;
+            transition: 0.3s; 
             text-decoration: none;
         }
-        .btn-sky-outline:hover { background-color: #ffffff; color: var(--sky-blue) !important; }
+        .btn-sky-outline:hover { background: #fff; color: var(--sky-blue) !important; }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--sky-blue);
+                padding: 20px;
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .btn-sky-outline { width: 100%; text-align: center; display: block; }
+        }
 
         /* Header */
         .contact-header {
-            padding: 80px 0;
-            background: linear-gradient(rgba(14, 165, 233, 0.9), rgba(14, 165, 233, 0.9)), 
+            padding: 100px 0;
+            background: linear-gradient(rgba(14, 165, 233, 0.85), rgba(14, 165, 233, 0.85)), 
                         url('https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; color: white; text-align: center;
+            background-size: cover; 
+            background-position: center;
+            color: white; 
+            text-align: center;
         }
 
         .contact-card {
-            background: #ffffff; border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            overflow: hidden; margin-top: -60px; border: none;
+            background: #ffffff; 
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden; 
+            margin-top: -80px; 
+            border: none;
+            position: relative;
+            z-index: 10;
         }
 
-        .form-control:focus { border-color: var(--sky-blue); box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.25); }
+        .form-control:focus, .form-select:focus { 
+            border-color: var(--sky-blue); 
+            box-shadow: 0 0 0 0.25rem rgba(14, 165, 233, 0.15); 
+        }
 
-        .btn-send, .btn-get-started {
-            background-color: var(--sky-blue); color: white; font-weight: 700;
-            padding: 12px 30px; border: none; transition: 0.3s;
+        .btn-get-started {
+            background-color: var(--sky-blue); 
+            color: white; 
+            font-weight: 700;
+            padding: 14px; 
+            border: none; 
+            transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .btn-send:hover, .btn-get-started:hover { background-color: #0284c7; transform: translateY(-2px); color: white; }
+        .btn-get-started:hover { background-color: #0284c7; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3); color: white; }
 
-        .map-container { min-height: 450px; height: 100%; width: 100%; border-radius: 15px; }
+        .map-container { min-height: 500px; height: 100%; width: 100%; border: none; }
 
-        /* Floating WhatsApp Button */
+        /* Floating WhatsApp */
         .whatsapp-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: var(--whatsapp-green);
+            color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;
         }
-        .whatsapp-float:hover { background-color: #128C7E; color: white; transform: scale(1.1); }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff; background-color: #128C7E; }
 
         /* Footer */
         footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
-        footer h5, footer p, footer li, footer small { color: #ffffff !important; }
         .footer-logo { font-weight: 800; font-size: 1.5rem; }
-        .sky-line { height: 2px; width: 50px; background: #ffffff; margin: 10px 0 20px 0; }
-        footer hr { border-top: 1px solid rgba(255,255,255,0.3); }
-        .badge.border-white { border: 1px solid #ffffff !important; }
+        .sky-line { height: 3px; width: 40px; background: #ffffff; margin: 10px 0 20px 0; opacity: 0.7; }
+        footer a { color: #fff !important; opacity: 0.8; transition: 0.3s; }
+        footer a:hover { opacity: 1; text-decoration: underline !important; }
     </style>
 </head>
 <body>
@@ -106,16 +118,19 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">DK <span style="color: #ffffff">ACCOUNT FIRM</span></a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-                    <li class="nav-item"><a class="btn btn-sky-outline ms-lg-3" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-sky-outline" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -129,23 +144,23 @@
     </header>
 
     <main class="container mb-5">
-        <div class="row contact-card">
-            <div class="col-lg-6 p-5">
+        <div class="row contact-card mx-0">
+            <div class="col-lg-6 p-4 p-md-5">
                 <h2 class="fw-bold mb-4">Send us a Message</h2>
                 <form action="https://formspree.io/f/xeeryqga" method="POST">
                     <input type="hidden" name="_next" value="https://sirjulius001.github.io/dkaccountfirm/success.html">
                     <input type="hidden" name="_subject" value="New Lead from DK Account Firm Website">
                     
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Full Name</label>
+                        <label class="form-label fw-bold small">Full Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Email Address</label>
+                        <label class="form-label fw-bold small">Email Address</label>
                         <input type="email" name="email" class="form-control" placeholder="example@business.com" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Service Required</label>
+                        <label class="form-label fw-bold small">Service Required</label>
                         <select name="service" class="form-select">
                             <option value="Tax Strategy">Tax Strategy & Compliance</option>
                             <option value="Audit">Audit & Assurance</option>
@@ -155,16 +170,16 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label class="form-label fw-bold">Your Message</label>
-                        <textarea name="message" class="form-control" rows="5" placeholder="How can we help your business thrive?" required></textarea>
+                        <label class="form-label fw-bold small">Your Message</label>
+                        <textarea name="message" class="form-control" rows="4" placeholder="How can we help your business thrive?" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-get-started w-100 rounded-3">Get Started Now</button>
                 </form>
             </div>
 
             <div class="col-lg-6 p-0">
-                <iframe class="map-container border-0" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.97151125219!2d37.641604!3d0.0511112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17882199049ed0f1%3A0x6b8013e2d1d07897!2sMeru!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" 
+                <iframe class="map-container" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15958.971261314544!2d37.644485749999994!3d0.05148015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17881f6206000001%3A0x7d6a5c3e031a6d4c!2sMeru!5e0!3m2!1sen!2ske!4v1710000000000!5m2!1sen!2ske" 
                     allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -176,16 +191,15 @@
                 <div class="col-lg-4 mb-4">
                     <div class="footer-logo">DK ACCOUNT FIRM</div>
                     <div class="sky-line"></div>
-                    <p>Your trusted partner in navigating the complexities of modern finance. Serving clients across the Republic of Kenya with integrity.</p>
-                    <a href="contact.html" class="btn btn-outline-light mt-2 px-4 py-2">GET STARTED</a>
+                    <p class="opacity-75">Your trusted partner in navigating the complexities of modern finance. Serving clients across Kenya with integrity.</p>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="services.html" class="text-white text-decoration-none">Bookkeeping</a></li>
-                        <li><a href="services.html" class="text-white text-decoration-none">Payroll</a></li>
-                        <li><a href="services.html" class="text-white text-decoration-none">Tax Filing</a></li>
-                        <li><a href="services.html" class="text-white text-decoration-none">Audit</a></li>
+                    <ul class="list-unstyled opacity-75">
+                        <li><a href="services.html" class="text-decoration-none">Bookkeeping</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Payroll</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Tax Filing</a></li>
+                        <li><a href="services.html" class="text-decoration-none">Audit</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
@@ -199,13 +213,13 @@
                 <div class="col-lg-3 col-md-4 mb-4">
                     <h5 class="fw-bold">Contact</h5>
                     <p class="mb-1"><i class="fas fa-phone me-2"></i> +254 110 311 712</p>
-                    <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Meru Town, Kenya</p>
                 </div>
             </div>
-            <hr>
+            <hr class="opacity-25">
             <div class="text-center py-3">
-                <small>© 2026 DK Account Firm. All Rights Reserved.</small>
+                <small class="opacity-75">© 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
