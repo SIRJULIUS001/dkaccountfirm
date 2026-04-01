@@ -43,20 +43,20 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: var(--dark-charcoal);
-            overflow-x: hidden; /* Prevent horizontal scroll on Android */
+            overflow-x: hidden;
         }
 
-        /* Navigation - Fixed for Android Consistency */
+        /* Navigation */
         .navbar {
             background-color: var(--sky-blue) !important;
             padding: 0.8rem 0;
-            z-index: 1050; /* Stay above hero and cards */
+            z-index: 1050;
             width: 100%;
         }
 
         .navbar-brand {
             color: #ffffff !important;
-            font-weight: 800 !important; /* Matches bold preference */
+            font-weight: 800 !important;
             font-size: 1.25rem;
             margin-right: 0;
         }
@@ -67,7 +67,7 @@
             margin: 0 15px;
         }
 
-        /* Mobile Menu Fixes */
+        /* Mobile Menu */
         @media (max-width: 991px) {
             .navbar-collapse {
                 background-color: var(--sky-blue);
@@ -98,7 +98,7 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section - Fixed Image for Android */
+        /* Hero Section */
         .hero {
             padding: 60px 0 120px 0;
             background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
@@ -106,7 +106,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: scroll; /* Android compatibility fix */
+            background-attachment: scroll;
         }
 
         .owner-img {
@@ -119,6 +119,18 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
+        }
+
+        /* Mobile Typography & Overlap Fixes */
+        @media (max-width: 768px) {
+            .display-3 { font-size: 2.2rem; }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
         }
 
         /* Cards & Widgets */
@@ -224,13 +236,13 @@
     <header class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7 text-start">
+                <div class="col-lg-5 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="dan.png" alt="Firm Principal" class="img-fluid owner-img">
+                </div>
+                <div class="col-lg-7 order-2 order-lg-1 text-center text-lg-start">
                     <h1 class="display-3 fw-bold mb-4">Precision & Strategy.<br><span style="color: var(--sky-blue)">National Reach, Local Integrity.</span></h1>
                     <p class="lead mb-5 text-muted">Certified Public Accountants providing world-class financial solutions for Kenya's dynamic business landscape.</p>
                     <a href="contact.html" class="btn btn-primary btn-lg px-5" style="background-color: var(--sky-blue); border: none; font-weight: 700;">Free Consultation</a>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block text-center">
-                    <img src="dan.png" alt="Firm Principal" class="img-fluid owner-img">
                 </div>
             </div>
         </div>
@@ -315,16 +327,16 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="service-list-item"><i class="fas fa-book"></i> <span class="fw-bold">Bookkeeping</span></div>
+                            <div class="service-list-item"><i class="fas fa-book"></i> <span class="fw-bold ms-2">Bookkeeping</span></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="service-list-item"><i class="fas fa-university"></i> <span class="fw-bold">Bank Reconciliation</span></div>
+                            <div class="service-list-item"><i class="fas fa-university"></i> <span class="fw-bold ms-2">Bank Reconciliation</span></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="service-list-item"><i class="fas fa-file-invoice-dollar"></i> <span class="fw-bold">Financial Statements</span></div>
+                            <div class="service-list-item"><i class="fas fa-file-invoice-dollar"></i> <span class="fw-bold ms-2">Financial Statements</span></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="service-list-item"><i class="fas fa-chart-pie"></i> <span class="fw-bold">Budgeting & Forecasting</span></div>
+                            <div class="service-list-item"><i class="fas fa-chart-pie"></i> <span class="fw-bold ms-2">Budgeting & Forecasting</span></div>
                         </div>
                     </div>
                 </div>
