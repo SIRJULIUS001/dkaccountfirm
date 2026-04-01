@@ -23,7 +23,7 @@
 
         body { font-family: 'Inter', sans-serif; color: var(--dark-charcoal); line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation - Synchronized with Index/Services */
+        /* Navigation */
         .navbar { background-color: var(--sky-blue) !important; padding: 0.8rem 0; z-index: 1050; }
         .navbar-brand { color: #ffffff !important; font-weight: 800 !important; font-size: 1.25rem; }
         .nav-link { color: #ffffff !important; font-weight: 600; margin: 0 10px; }
@@ -38,17 +38,6 @@
             transition: 0.3s; 
         }
         .btn-sky:hover { background: #fff; color: var(--sky-blue) !important; }
-
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background-color: var(--sky-blue);
-                padding: 20px;
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-            .nav-link { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-            .btn-sky { width: 100%; text-align: center; margin-top: 10px; }
-        }
 
         /* Market Pulse Ticker */
         .market-pulse {
@@ -88,12 +77,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
-        .article-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
+        .article-img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
         .article-card:hover .article-img-container img { transform: scale(1.05); }
 
         /* Resource Section */
@@ -101,7 +85,7 @@
         .resource-card { background: #fff; border-top: 4px solid var(--sky-blue); transition: 0.3s; }
 
         /* Compliance Calendar */
-        .deadline-item { font-size: 0.85rem; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .deadline-item { font-size: 0.85rem; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
         .deadline-upcoming { background: #f0f9ff; border-left: 4px solid var(--sky-blue); }
 
         /* Floating WhatsApp */
@@ -112,18 +96,16 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
 
-        /* Footer Styling */
         footer { background-color: var(--sky-blue); color: #ffffff !important; padding: 60px 0 20px 0; }
         .footer-logo { font-weight: 800; font-size: 1.5rem; }
-        .sky-line { height: 3px; width: 40px; background: #ffffff; margin: 10px 0 20px 0; opacity: 0.7; }
     </style>
 </head>
 <body>
 
     <div class="market-pulse">
         <div class="ticker-content">
-            <span class="mx-4"><i class="fas fa-chart-line text-info me-2"></i> KES to USD: 129.50</span>
-            <span class="mx-4"><i class="fas fa-exclamation-circle text-warning me-2"></i> KRA Deadline: PAYE due in 8 days</span>
+            <span class="mx-4" id="usd-rate"><i class="fas fa-chart-line text-info me-2"></i> KES to USD: Loading...</span>
+            <span class="mx-4"><i class="fas fa-exclamation-circle text-warning me-2"></i> KRA Deadline: PAYE due on the 9th</span>
             <span class="mx-4"><i class="fas fa-city text-info me-2"></i> Meru Trade Permits: 2026 Renewals Open</span>
             <span class="mx-4"><i class="fas fa-file-invoice text-success me-2"></i> iTax Portal: System Stability High</span>
         </div>
@@ -195,7 +177,7 @@
             <h2 class="fw-bold mb-4">Firm <span style="color: var(--sky-blue)">Toolbox & Resources</span></h2>
             <div class="row g-4 text-center">
                 <div class="col-md-4">
-                    <div class="p-4 shadow-sm rounded resource-card h-100 border">
+                    <div class="p-4 shadow-sm rounded resource-card h-100 border text-start">
                         <i class="fas fa-calculator mb-3 fs-3 text-primary"></i>
                         <h4 class="h5 fw-bold">Quick Calculator</h4>
                         <input type="number" id="calcAmount" class="form-control form-control-sm mb-2" placeholder="Amount (KES)">
@@ -210,7 +192,7 @@
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border">
                         <i class="fas fa-calendar-check mb-3 fs-3 text-success"></i>
-                        <h4 class="h5 fw-bold">Deadline Tracker</h4>
+                        <h4 class="h5 fw-bold text-start">Deadline Tracker</h4>
                         <div id="deadline-list" class="text-start"></div>
                     </div>
                 </div>
@@ -218,8 +200,8 @@
                 <div class="col-md-4">
                     <div class="p-4 shadow-sm rounded resource-card h-100 border" id="quizContainer">
                         <i class="fas fa-heartbeat mb-3 fs-3 text-danger"></i>
-                        <h4 class="h5 fw-bold">KRA Health Check</h4>
-                        <p class="small text-muted" id="quizQuestion">Are your ETR/TIMS sales reconciled?</p>
+                        <h4 class="h5 fw-bold text-start">KRA Health Check</h4>
+                        <p class="small text-muted text-start" id="quizQuestion">Are your ETR/TIMS sales reconciled?</p>
                         <div class="d-flex gap-2">
                             <button onclick="nextQuestion(true)" class="btn btn-sm btn-success w-100">Yes</button>
                             <button onclick="nextQuestion(false)" class="btn btn-sm btn-outline-danger w-100">No</button>
@@ -262,7 +244,7 @@
                     <p><i class="fas fa-envelope me-2"></i> dkirimi152@gmail.com</p>
                 </div>
             </div>
-            <hr class="opacity-25">
+            <hr class="opacity-25 text-white">
             <div class="text-center py-3">
                 <small class="opacity-75">&copy; 2026 DK Account Firm. All Rights Reserved.</small>
             </div>
@@ -273,6 +255,20 @@
     <script>
         const NEWS_API_KEY = 'pub_719047970875c759550304620021319084877';
 
+        // 1. Fetch Real-Time Exchange Rates
+        async function fetchExchangeRates() {
+            const rateElement = document.getElementById('usd-rate');
+            try {
+                const response = await fetch('https://open.er-api.com/v6/latest/USD');
+                const data = await response.json();
+                const rate = data.rates.KES.toFixed(2);
+                if(rateElement) rateElement.innerHTML = `<i class="fas fa-chart-line text-info me-2"></i> KES to USD: ${rate}`;
+            } catch (e) {
+                if(rateElement) rateElement.innerHTML = `<i class="fas fa-chart-line text-info me-2"></i> KES to USD: 129.50 (Est.)`;
+            }
+        }
+
+        // 2. Fetch Live Kenya Finance News
         async function fetchKenyaFinanceNews() {
             const container = document.getElementById('kenya-news-container');
             const url = `https://newsdata.io/api/1/latest?apikey=${NEWS_API_KEY}&country=ke&category=business&language=en`;
@@ -284,21 +280,34 @@
                     data.results.slice(0, 4).forEach(article => {
                         container.insertAdjacentHTML('beforeend', `
                             <div class="mb-3 pb-2 border-bottom">
-                                <h6 class="mb-1 small"><a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold">${article.title}</a></h6>
+                                <h6 class="mb-1 small">
+                                    <a href="${article.link}" target="_blank" class="text-decoration-none text-dark fw-bold">${article.title}</a>
+                                </h6>
                             </div>`);
                     });
                 }
             } catch (e) { container.innerHTML = '<p class="small text-danger">News feed currently offline.</p>'; }
         }
 
+        // 3. Dynamic Deadline Calendar
         function generateCalendar() {
             const container = document.getElementById('deadline-list');
-            const deadlines = [{ name: "PAYE / SHIF", day: 9 }, { name: "VAT / MRI", day: 20 }];
-            container.innerHTML = deadlines.map(item => `
-                <div class="deadline-item deadline-upcoming">
-                    <div><strong>${item.name}</strong><br><small>Due: ${item.day}th</small></div>
-                    <span class="badge bg-primary">Upcoming</span>
-                </div>`).join('');
+            const today = new Date();
+            const monthName = today.toLocaleString('default', { month: 'long' });
+            
+            const deadlines = [
+                { name: "PAYE / SHIF", day: 9 },
+                { name: "VAT / MRI Returns", day: 20 }
+            ];
+
+            container.innerHTML = deadlines.map(item => {
+                const isPast = today.getDate() > item.day;
+                return `
+                    <div class="deadline-item ${isPast ? 'opacity-50 bg-light' : 'deadline-upcoming shadow-sm'}">
+                        <div><strong>${item.name}</strong><br><small>${item.day}th ${monthName}</small></div>
+                        <span class="badge ${isPast ? 'bg-secondary' : 'bg-primary'}">${isPast ? 'Passed' : 'Due'}</span>
+                    </div>`;
+            }).join('');
         }
 
         function calculateVAT(rate) {
@@ -306,27 +315,40 @@
             if(!amt) return;
             const res = document.getElementById('calcResult');
             res.style.display = 'block';
-            res.innerHTML = `VAT: ${(amt * rate).toLocaleString()} | Total: ${(amt * 1.16).toLocaleString()}`;
+            res.innerHTML = `VAT (16%): ${(amt * rate).toLocaleString()} <br> Total Incl. VAT: ${(amt * (1 + rate)).toLocaleString()}`;
         }
 
         function calculateMpesa() {
             const amt = parseFloat(document.getElementById('calcAmount').value);
             if(!amt) return;
             const res = document.getElementById('calcResult');
-            let fee = amt <= 1000 ? 13 : 28;
             res.style.display = 'block';
-            res.innerHTML = `Estimated Fee: KES ${fee}`;
+            // Simplified logic for example purposes
+            let fee = amt <= 1000 ? 13 : amt <= 5000 ? 28 : 55;
+            res.innerHTML = `Estimated M-Pesa Fee: KES ${fee}`;
         }
 
         let step = 0;
+        const qs = ["Tax Certificate valid?", "NSSF/SHIF up to date?", "KRA Returns filed?"];
         function nextQuestion(val) {
-            const qs = ["Tax Certificate valid?", "NSSF up to date?", "Returns filed?"];
             step++;
-            if(step < qs.length) { document.getElementById('quizQuestion').innerText = qs[step]; }
-            else { document.getElementById('quizContainer').innerHTML = '<div class="text-center"><i class="fas fa-check-circle text-success fs-1 mb-2"></i><p class="text-success fw-bold">Health Check Complete!</p></div>'; }
+            if(step < qs.length) { 
+                document.getElementById('quizQuestion').innerText = qs[step]; 
+            } else { 
+                document.getElementById('quizContainer').innerHTML = `
+                    <div class="text-center py-3">
+                        <i class="fas fa-check-circle text-success fs-1 mb-2"></i>
+                        <p class="text-success fw-bold mb-0">Health Check Complete!</p>
+                        <small class="text-muted">Contact us for a full audit.</small>
+                    </div>`; 
+            }
         }
 
-        document.addEventListener('DOMContentLoaded', () => { fetchKenyaFinanceNews(); generateCalendar(); });
+        document.addEventListener('DOMContentLoaded', () => { 
+            fetchExchangeRates();
+            fetchKenyaFinanceNews(); 
+            generateCalendar(); 
+        });
     </script>
 </body>
 </html>
