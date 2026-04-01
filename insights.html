@@ -87,7 +87,38 @@
         /* Compliance Calendar */
         .deadline-item { font-size: 0.85rem; padding: 10px; margin-bottom: 8px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
         .deadline-upcoming { background: #f0f9ff; border-left: 4px solid var(--sky-blue); }
-
+        .portal-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #edf2f7;
+            cursor: pointer;
+        }
+        
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.08) !important;
+            border-color: var(--sky-blue);
+        }
+        
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+        
+        .portal-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Ensure icons look good on small screens */
+        @media (max-width: 576px) {
+            .portal-card h6 { font-size: 0.8rem; }
+            .icon-box { width: 45px; height: 45px; }
+            .icon-box i { font-size: 1.2rem !important; }
+        }
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366;
@@ -215,7 +246,76 @@
     <a href="https://wa.me/254110311712" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+<section class="py-5 bg-light border-top">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Compliance <span style="color: var(--sky-blue)">Gateways</span></h2>
+            <p class="text-muted">Quick access to National and Meru County regulatory portals.</p>
+        </div>
+        
+        <div class="row g-3 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="https://itax.kra.go.ke/" target="_blank" class="text-decoration-none">
+                    <div class="portal-card text-center p-3 h-100 shadow-sm bg-white rounded-3">
+                        <div class="icon-box mb-2 mx-auto" style="background: #fff5f5; color: #dc3545;">
+                            <i class="fas fa-file-invoice-dollar fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark small mb-1">KRA iTax</h6>
+                        <p style="font-size: 0.7rem;" class="text-muted mb-0">Tax & P9 Ledger</p>
+                    </div>
+                </a>
+            </div>
 
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="https://sha.go.ke/" target="_blank" class="text-decoration-none">
+                    <div class="portal-card text-center p-3 h-100 shadow-sm bg-white rounded-3">
+                        <div class="icon-box mb-2 mx-auto" style="background: #f0fdf4; color: #16a34a;">
+                            <i class="fas fa-hand-holding-medical fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark small mb-1">SHA (SHIF)</h6>
+                        <p style="font-size: 0.7rem;" class="text-muted mb-0">Health Levies</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="https://selfservice.nssf.or.ke/" target="_blank" class="text-decoration-none">
+                    <div class="portal-card text-center p-3 h-100 shadow-sm bg-white rounded-3">
+                        <div class="icon-box mb-2 mx-auto" style="background: #fffbeb; color: #d97706;">
+                            <i class="fas fa-piggy-bank fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark small mb-1">NSSF</h6>
+                        <p style="font-size: 0.7rem;" class="text-muted mb-0">Pension Funds</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="https://www.ecitizen.go.ke/" target="_blank" class="text-decoration-none">
+                    <div class="portal-card text-center p-3 h-100 shadow-sm bg-white rounded-3">
+                        <div class="icon-box mb-2 mx-auto" style="background: #eff6ff; color: #2563eb;">
+                            <i class="fas fa-landmark fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark small mb-1">eCitizen</h6>
+                        <p style="font-size: 0.7rem;" class="text-muted mb-0">Company BRS</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="https://selfservice.meru.go.ke/" target="_blank" class="text-decoration-none">
+                    <div class="portal-card text-center p-3 h-100 shadow-sm bg-white rounded-3" style="border-bottom: 3px solid #1a5928;">
+                        <div class="icon-box mb-2 mx-auto" style="background: #f0fdf4; color: #1a5928;">
+                            <i class="fas fa-map-marker-alt fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold text-dark small mb-1">Meru County</h6>
+                        <p style="font-size: 0.7rem;" class="text-muted mb-0">Business Permits</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
     <footer>
         <div class="container">
             <div class="row">
