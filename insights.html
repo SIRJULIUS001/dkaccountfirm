@@ -99,28 +99,37 @@
             border-color: var(--sky-blue);
         }
         
+        /* Make the logo circles larger and cleaner */
         .icon-box {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        overflow: hidden; /* Keeps the logo inside the circle */
-        background: white;
-        padding: 5px;
-    }
-    
-    .icon-box img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* Ensures logo isn't stretched */
-    }
-        
-        .portal-card:hover .icon-box {
-            transform: scale(1.1) rotate(5deg);
+            width: 75px;          /* Increased from small default */
+            height: 75px; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.3s ease;
+            padding: 8px;         /* Controlled padding so logos aren't too tiny */
         }
         
+        /* Ensure the image actually fills the box */
+        .icon-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;  /* Keeps the logo's original proportions */
+        }
+        
+        /* Hover effect to make it feel interactive */
+        .portal-card:hover .icon-box {
+            transform: translateY(-3px);
+            border-color: #0ea5e9 !important; /* Sky blue border on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .portal-card {
+            transition: transform 0.2s ease;
+        }
         /* Ensure icons look good on small screens */
         @media (max-width: 576px) {
             .portal-card h6 { font-size: 0.8rem; }
