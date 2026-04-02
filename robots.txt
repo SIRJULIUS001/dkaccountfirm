@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /temp/
+
+# Link to your sitemap so Google finds it instantly
+Sitemap: https://sirjulius001.github.io/dkaccountfirm/sitemap.xml
