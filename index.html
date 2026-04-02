@@ -207,6 +207,42 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
+                /* Logo responsiveness */
+        .logo-responsive {
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* Brand Text scaling */
+        .brand-text {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Divider styling */
+        .divider-responsive {
+            width: 1px; 
+            height: 30px; 
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Desktop upgrades */
+        @media (min-width: 768px) {
+            .logo-responsive {
+                width: 50px;
+                height: 50px;
+            }
+            .brand-text {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            .tagline-text {
+                font-size: 0.65rem;
+            }
+            .divider-responsive {
+                height: 35px;
+            }
+        }
 
         .whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); color: #fff; }
     </style>
@@ -215,15 +251,12 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-          <a class="navbar-brand text-nowrap d-flex align-items-center" href="index.html">
-            <img src="logo1.png" alt="Logo" width="50" height="50" class="d-inline-block rounded-1 shadow-sm">
+         <a class="navbar-brand text-nowrap d-flex align-items-center" href="index.html">
+            <img src="logo1.png" alt="Logo" class="d-inline-block rounded-1 shadow-sm logo-responsive">
     
-            <div class="mx-3 d-none d-md-block" style="width: 1px; height: 35px; background: rgba(255,255,255,0.3);"></div>
+            <div class="mx-2 mx-md-3 d-sm-block divider-responsive"></div>
     
-            <div class="lh-1">
-            <span class="fw-bold d-block" style="letter-spacing: 1px; font-size: 1.1rem;">DK <span style="color: #ffffff">ACCOUNT FIRM</span></span>
-                <small class="opacity-75 d-block" style="font-size: 0.65rem; letter-spacing: 0.5px;">CONSULTANCY & ICT SOLUTIONS</small>
-            </div>
+            <span class="fw-bold brand-text">DK <span style="color: #ffffff">ACCOUNT FIRM</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
